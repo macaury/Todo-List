@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista {% endblock %}
+
+{% Block content %}
+
+<div class="list-div">
+  <h3>To Do List</h3>
+  <div class="row barra">
+
+    <div class="col-sm-10">
+      <form method="get" id="search">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Pesquisar" name="search">
+          <div class="input-group-btn">
+            <button class="btn btn-default" id="search-btn" type="submit">
+              <i class="fa fa-search"></i>
+            </button>
+
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-2">
+      <a id="add-button" href="">
+        <div class="add-div">
+          <i class="fa fa-plus"></i> Adicionar Tarefa
+      </a>
+    </div>
+  </div>
+</div>
+{% for Tarefa in tarefas %}
+<div class="row item">
+  <div class="col-sm-10">
+    <span><a class="link" href="">{{Tarefa.titulo}}</a></span>
+  </div>
+  <div class="col-sm-2 icones">
+    <span><i class="fa fa-edit"></i></span>
+    <span><i class="fa fa-trash"></i></span>
+  </div>
+</div>
+{% endfor %}
+
+</div>
+
+{% endblock %}
