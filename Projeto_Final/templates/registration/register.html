@@ -9,9 +9,10 @@
         <div class="card auth-card">
             <div class="card-body">
                 <h4 class="card-title text-center">Cadastro To Do List</h4>
-                <form action="" method="post">
+                <form method="post">
                     {% csrf_token %}
-                    <input type="hidden" name="next" class="btn btn-primary" value="{{ next }}"></input>
+                    <input type="hidden" name="next" value="{{ next }}"/>
+
                     {{ form|crispy }}
                     <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
                 </form>
