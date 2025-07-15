@@ -33,10 +33,16 @@
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Features</a>
+                        <form action="{% url 'logout' %}" method="post" >
+                            {% csrf_token %}
+                            <button class="btn btn-primary" type="submit">Logout</a>
+                        </form>
                     </li>
 
                 </ul>
+            </div>
+            <div class="User_name">
+                <span>Olá,{{user.username}}</span>
             </div>
         </div>
     </nav>
