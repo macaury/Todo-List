@@ -67,3 +67,16 @@ a{
     color: black !important;
    
 }
+
+/* Estilo da Pagina de login */
+
+
+
+.auth-card{
+    margin: 50px 0 !important;
+}
+
+.change-form-p{
+    padding-top: 18px !important;
+    text-align: center !important;
+}

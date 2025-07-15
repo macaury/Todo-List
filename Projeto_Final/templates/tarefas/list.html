@@ -2,7 +2,7 @@
 
 {% block title %} Lista {% endblock %}
 
-{% Block content %}
+{% block content %}
 
 <div class="list-div">
   <h3>To Do List</h3>
@@ -22,7 +22,7 @@
       </form>
     </div>
     <div class="col-sm-2">
-      <a id="add-button" href="">
+      <a id="add-button" href="novaTarefa/">
         <div class="add-div">
           <i class="fa fa-plus"></i> Adicionar Tarefa
       </a>
@@ -32,11 +32,13 @@
 {% for Tarefa in tarefas %}
 <div class="row item">
   <div class="col-sm-10">
-    <span><a class="link" href="">{{Tarefa.titulo}}</a></span>
+    <span><a class="link" href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}}</a></span>
   </div>
   <div class="col-sm-2 icones">
-    <span><i class="fa fa-edit"></i></span>
-    <span><i class="fa fa-trash"></i></span>
+    <a href="editar/{{Tarefa.id}}"><span><i class="fa fa-edit"></i></span>
+    </a>
+    <a href="delete/{{Tarefa.id}}"><span><i class="fa fa-trash"></i></span>
+    </a>
   </div>
 </div>
 {% endfor %}
