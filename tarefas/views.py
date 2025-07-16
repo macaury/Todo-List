@@ -5,19 +5,30 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import TarefaForm
 
+
+
+
+# função da pagina OverView
+@login_required
+def overlist(request):
+    tarefas_list = Tarefas.objects.all().order_by('-created_at').filter(usuario=request.user)
+    search = request.GET.get('search')
+    if search:
+        tarefas = Tarefas.objects.filter(titulo__icontains=search, usuario=request.user)
+        return render(request,'tarefas/overview.html',{'tarefas':tarefas})
+    else:
+        return render(request,'tarefas/overview.html',{'tarefas':tarefas_list})
+
 # renderia as listagem de tarefas filtrada pelo usuario logado
 @login_required
 def listaTarefas(request):
     tarefas_list = Tarefas.objects.all().order_by('-created_at').filter(usuario=request.user)
-
     search = request.GET.get('search')
-
     if search:
         tarefas = Tarefas.objects.filter(titulo__icontains=search, usuario=request.user)
         return render(request,'tarefas/list.html',{'tarefas':tarefas})
     else:
         return render(request,'tarefas/list.html',{'tarefas':tarefas_list})
-
 
 
 

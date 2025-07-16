@@ -9,14 +9,21 @@
 
     {% for Tarefa in tarefas %}
 
-    <div class="card item text-center " style="width: 16rem;">
+    <div class="card card-over item text-center " style="width: 16rem;">
       <div class="col ">
         <span class="titulo-item"><a class="link" href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}}</a></span>
       </div>
-      <div class="col">
-        <a href="editar/{{Tarefa.id}}"><span><i class="fa fa-edit"></i></span>
+      <div class="col" class="descricao">
+        <span ><p  href="/tarefa/{{Tarefa.id}}" text-overflow:ellipsis;>{{Tarefa.descricao}}</a></span>
+      </div>
+      <div class="row-btn">
+        <div class="edit-btn">
+          <a href="editar/{{Tarefa.id}} "><span><i class="fa fa-edit"></i></span>
+          </div>
         </a>
-        <a href="delete/{{Tarefa.id}}" class="delete-btn"><span><i class="fa fa-trash"></i></span>
+        <div class="trash-btn">
+          <a href="delete/{{Tarefa.id}}" class="delete-btn"><span><i class="fa fa-trash"></i></span>
+        </div>
         </a>
       </div>
     </div>

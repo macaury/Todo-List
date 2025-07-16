@@ -4,11 +4,22 @@
 
 {% block content %}
 
-<div class="list-tarefa">
-  <h3>{{ tarefa.titulo }}</h3>
-  <p>{{ tarefa.descricao }}</p>
-  <span>ola porra</span>
-</div>
+<div class="container">
 
+  <div class="tarefa-view">
+    
+    <div class="list-tarefa">
+      <div class="top">
+        <h3>{{ tarefa.titulo }}</h3>
+      </div>
+      <div class="bottom">
+
+        <p>{{ tarefa.descricao }}</p>
+      </div>
+      <span>ola porra</span>
+    </div>
+  </div>
+</div>
+  
 
 {% endblock %}
