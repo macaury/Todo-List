@@ -21,29 +21,49 @@
 
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
+
+        <div class="container-fluid justify-content-center">
+
             <a class="navbar-brand" href="/">Oak</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            {% if user.is_authenticated %}
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <form action="{% url 'logout' %}" method="post" >
-                            {% csrf_token %}
-                            <button class="btn btn-primary" type="submit">Logout</a>
-                        </form>
+                        <a class="nav-link active" aria-current="page" href="/overview">OverView</a>
                     </li>
 
                 </ul>
+
             </div>
-            <div class="User_name">
-                <span>Olá,{{user.username}}</span>
+            <div class="nav-item dropdown user-div">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Olá,{{user.username}}
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <form action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <button class="btn btn-logout" type="submit">Logout</a>
+                        </form>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
             </div>
+            {% endif %}
         </div>
     </nav>
 

@@ -1,8 +1,10 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 class Tarefas(models.Model):
     titulo = models.CharField(max_length=254)
     descricao = models.TextField()
+    usuario = models.ForeignKey(get_user_model(),on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
     

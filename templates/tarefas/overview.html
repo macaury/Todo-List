@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} OverView {% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row row-col-4">
+
+    {% for Tarefa in tarefas %}
+
+    <div class="card item text-center " style="width: 16rem;">
+      <div class="col ">
+        <span class="titulo-item"><a class="link" href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}}</a></span>
+      </div>
+      <div class="col">
+        <a href="editar/{{Tarefa.id}}"><span><i class="fa fa-edit"></i></span>
+        </a>
+        <a href="delete/{{Tarefa.id}}" class="delete-btn"><span><i class="fa fa-trash"></i></span>
+        </a>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

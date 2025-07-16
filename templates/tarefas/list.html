@@ -6,12 +6,12 @@
 
 <div class="list-div">
   <h3>To Do List</h3>
-  <div class="row barra">
 
+  <div class="row-barra ">
     <div class="col-sm-10">
-      <form method="get" id="search">
+      <form method="get" id="search-form">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Pesquisar" name="search">
+          <input type="text" class="form-control" placeholder="Pesquisar" name="search" value="{{request.GET.search}}">
           <div class="input-group-btn">
             <button class="btn btn-default" id="search-btn" type="submit">
               <i class="fa fa-search"></i>
@@ -24,25 +24,33 @@
     <div class="col-sm-2">
       <a id="add-button" href="novaTarefa/">
         <div class="add-div">
-          <i class="fa fa-plus"></i> Adicionar Tarefa
+          <i class="fa fa-plus"></i>Adicionar Tarefa
       </a>
     </div>
   </div>
 </div>
-{% for Tarefa in tarefas %}
-<div class="row item">
-  <div class="col-sm-10">
-    <span><a class="link" href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}}</a></span>
-  </div>
-  <div class="col-sm-2 icones">
-    <a href="editar/{{Tarefa.id}}"><span><i class="fa fa-edit"></i></span>
-    </a>
-    <a href="delete/{{Tarefa.id}}"><span><i class="fa fa-trash"></i></span>
-    </a>
-  </div>
-</div>
-{% endfor %}
 
+
+<div class="span-scrool alig-center"> <span>utilize o scroll</span></div>
+
+<div class="row-item">
+
+    {% for Tarefa in tarefas %}
+    <div class="row item ">
+      <div class="col-sm-10 ">
+        <span class="titulo-item"><a class="link" href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}}</a></span>
+      </div>
+      <div class="col-sm-2 icones">
+        <a href="editar/{{Tarefa.id}}"><span><i class="fa fa-edit"></i></span>
+        </a>
+        <a href="delete/{{Tarefa.id}}" class="delete-btn"><span><i class="fa fa-trash"></i></span>
+        </a>
+      </div>
+    </div>
+
+    {% endfor %}
 </div>
+
+
 
 {% endblock %}

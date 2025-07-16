@@ -14,6 +14,11 @@ a{
     border-bottom: 0.5px solid lightgray !important ;
 }
 
+.container-fluid{
+    max-width: 1280px !important;
+    margin: 0 20px !important;
+}
+
 .navbar-nav{
     margin: auto !important;
 }
@@ -23,16 +28,36 @@ a{
     font-size: 2em !important;
 }
 
+
+
 .fixed-bottom{
     background-color: lightseagreen !important;
     padding: 20px 10px;
     text-align: center;
 }
 
-/*Main*/
+/*Estilo do componente List || que é a Listagem /home*/
 
 .list-div{
-    margin: 0 10% !important;
+    margin: 1.5em 10% !important;
+    border-radius: 10px;
+    border: 0.5px solid pink ;
+    padding: 10px;
+}
+
+.list-div h3{
+    text-align: center;
+}
+
+.row-barra{
+    display: flex !important;
+    flex-direction: row !important;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+#search-form{
+   padding-right: 10px;
 }
 
 #add-button{
@@ -43,14 +68,16 @@ a{
 
 .items{
     text-align: end !important;
+ 
 }
 
 .add-div{
-    background-color: blue !important;
     color: white !important;
+    background-color: blue !important;
     border-radius: 10px !important;
     padding: 0.5em !important;
     text-decoration: none !important;
+    
 }
 /*Icon search   */
 .input-group-btn{
@@ -60,12 +87,17 @@ a{
 
 /* item da listagem*/
 .item{
+    margin-left: 10px;
     border-bottom: 0.5px dashed lightgrey !important;
     height: 3em !important;
-    font-size: 2em !important;
+    font-size: 1.5em !important;
     margin-top: 1em !important;
     color: black !important;
    
+}
+
+.titulo-item{
+    margin-left: 10px;
 }
 
 /* Estilo da Pagina de login */
@@ -81,6 +113,29 @@ a{
     text-align: center !important;
 }
 
-.User_name{
-    padding: 10px;
+
+/*Box Nome do usuario*/
+.user-div{
+    padding: 10px 15px;
+    color:white !important;
+    font-size: 0.8em;
+    border: 1px solid lightblue;
+    border-radius: 7px;
+}
+
+.user-div:hover{
+    background-color: black;
+}
+.dropdown-menu{
+   padding: 0 !important;
+}
+
+.btn-logout{
+    width: 100%;
+    text-align: start !important;
+
+}
+.btn-logout:hover{
+    background-color: aqua;
+    
 }

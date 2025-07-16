@@ -5,11 +5,20 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import TarefaForm
 
-# Create your views here.
+# renderia as listagem de tarefas filtrada pelo usuario logado
 @login_required
 def listaTarefas(request):
-    tarefas_list = Tarefas.objects.all().order_by('-created_at')
-    return render(request,'tarefas/list.html',{'tarefas':tarefas_list})
+    tarefas_list = Tarefas.objects.all().order_by('-created_at').filter(usuario=request.user)
+
+    search = request.GET.get('search')
+
+    if search:
+        tarefas = Tarefas.objects.filter(titulo__icontains=search, usuario=request.user)
+        return render(request,'tarefas/list.html',{'tarefas':tarefas})
+    else:
+        return render(request,'tarefas/list.html',{'tarefas':tarefas_list})
+
+
 
 
 # função Nova Tarefa - para criar uma nova tarefa
@@ -17,8 +26,13 @@ def listaTarefas(request):
 def novaTarefa(request):
     if request.method == 'POST':
         form = TarefaForm(request.POST)
-        form.save()
-        return redirect('/')
+
+    
+        if form.is_valid:
+            tf = form.save(commit=False)
+            tf.usuario = request.user
+            tf.save()
+            return redirect('/')
     else:
         form = TarefaForm()
         return render(request,'tarefas/addTarefa.html',{'form':form})
