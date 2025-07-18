@@ -8,6 +8,7 @@ urlpatterns = [
     path('editar/<int:id>/', views.editarTarefa, name='EditarTarefa'),
     path('delete/<int:id>/', views.deleteTarefa, name='DeleteTarefa'),
     path('overview/',views.overlist,name='overlist'),
-
+    path('overview/editar/<int:id>/', views.editarTarefa, name='EditarTarefa'),
+    path('overview/delete/<int:id>/', views.deleteTarefa, name='DeleteTarefa'),
 
 ]

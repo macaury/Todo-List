@@ -19,8 +19,9 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
 
         <div class="container-fluid justify-content-center">
-
-            <a class="navbar-brand" href="/">Oak</a>
+            <div id="brand">
+                <a class="navbar-brand" href="/">Oak</a>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,7 +29,7 @@
 
             {% if user.is_authenticated %}
 
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class=" navbar-collapse" id="navbarNav">
                 <ul class=" navbar-nav ">
                     <li class="nav-item ">
                         <button class="btn btn-primary home">
@@ -72,8 +73,8 @@
         {% block content %}
         {% endblock %}
     </main>
-    <footer class="bg-dark text-white py-3  mt-auto">
-        <div class="container text-center">
+    <footer id="footer-bottom" class="py-3  mt-auto ">
+        <div class="text-center">
             <p class="mb-0">&copy; Powered by Macaury Carvalho</p>
         </div>
     </footer>

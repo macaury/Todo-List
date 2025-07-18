@@ -8,18 +8,26 @@ a{
     text-decoration: none !important;
 }
 
-.navbar{
-  
-    background-color: lightseagreen !important;
-    border-radius: 0 0 100px 0 !important ;
-    -webkit-box-shadow: 0px 10px 13px -7px #00000044, 0px 8px 9px 2px rgba(89,89,89,0); 
-    box-shadow: 0px 10px 13px -7px #00000044, 0px 8px 9px 2px rgba(89,89,89,0);
+main{
+    min-height: 80vh;
+}
+.navbar-brand{
+    margin-left: 20px;
+}
+
+#navbarNav .nav-item{
+    margin: 5px;
 }
 
 .container-fluid{
-    max-width: 1280px !important;
-    margin: 0 20px !important;
+    padding: 10px 0;
+    margin: 10px auto auto auto !important;
+    background-color: lightseagreen !important;
+    border-radius: 100px !important ;
+    
+    width: 98%;
 }
+
 
 .navbar-nav{
     margin: auto !important;
@@ -32,10 +40,7 @@ a{
 
 
 
-.fixed-bottom{
-
-    margin: 0 !important;
-    bottom: 0 !important;
+#footer-bottom{
     background-color: lightseagreen !important;
     padding: 20px 0 !important;
     text-align: center;
@@ -49,6 +54,7 @@ a{
 /*Estilo do componente List || que é a Listagem /home*/
 
 .list-div{
+
     margin: 1.5em 10% !important;
     border-radius: 10px;
     border: 0.5px solid pink ;
@@ -65,6 +71,11 @@ a{
     flex-direction: row !important;
     margin-top: 20px;
     padding: 20px 0 !important;
+    
+}
+
+.row-item{
+    min-width: none;
 }
 
 #search-form{
@@ -201,6 +212,11 @@ a{
 
 /* PAGINA OVERVIEW */
 
+.container{
+    height: 100vh !important;
+    margin-top: 30px;
+}
+
 .card-over{
     height: fit-content !important;
     max-height: 300px;
@@ -215,4 +231,14 @@ a{
 }
 
 
+.metricas{
+    width: 100% !important;
+    background-color: wheat;
+    min-width: 350px !important;
+}
 
+.card-metrics{
+    width: 150px ;
+    height: 110px;
+    background-color: lightcoral;
+}

@@ -31,24 +31,24 @@
 </div>
 
 
-<div class="span-scrool alig-center"> <span>utilize o scroll</span></div>
+<div class="span-scrool" style="width:100% ;">  <span>utilize o scroll</span></div>
 
 <div class="row-item">
 
-    {% for Tarefa in tarefas %}
-    <div class="row item ">
-      <div class="col-sm-10 ">
-        <span class="titulo-item"><a class="link" href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}}</a></span>
-      </div>
-      <div class="col-sm-2 icones">
-        <a href="editar/{{Tarefa.id}}"><span><i class="fa fa-edit"></i></span>
-        </a>
-        <a href="delete/{{Tarefa.id}}" class="delete-btn"><span><i class="fa fa-trash"></i></span>
-        </a>
-      </div>
+  {% for Tarefa in tarefas %}
+  <div class="row item ">
+    <div class="col-sm-10 ">
+      <span class="titulo-item"><a class="link" href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}}</a></span>
     </div>
+    <div class="col-sm-2 icones">
+      <a href="editar/{{Tarefa.id}}"><span><i class="fa fa-edit"></i></span>
+      </a>
+      <a href="delete/{{Tarefa.id}}" class="delete-btn"><span><i class="fa fa-trash"></i></span>
+      </a>
+    </div>
+  </div>
 
-    {% endfor %}
+  {% endfor %}
 </div>
 
 

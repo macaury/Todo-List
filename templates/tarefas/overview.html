@@ -4,30 +4,41 @@
 
 {% block content %}
 
-<div class="container">
+
+
+<div class="container container-over">
   <div class="row row-col-4">
+    
+    <div class="metricas ">
+      <div class="col-md-4 card-metrics item_1">Metrica 1</div>
+      <div class="col-md-4 card-metrics item_2">Metrica 2</div>
+      <div class="col-md-4 card-metrics item_3">Metrica 3</div>
+
+
+    </div>
 
     {% for Tarefa in tarefas %}
 
     <div class="card card-over item text-center " style="width: 16rem;">
       <div class="col ">
+        <span class="tag">{{user.username}}</span>
         <span class="titulo-item"><a class="link" href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}}</a></span>
       </div>
       <div class="col" class="descricao">
-        <span ><p  href="/tarefa/{{Tarefa.id}}" text-overflow:ellipsis;>{{Tarefa.descricao}}</a></span>
+        <span ><p  href="/overview/tarefa/{{Tarefa.id}}" text-overflow:ellipsis;>{{Tarefa.descricao}}</a></span>
       </div>
       <div class="row-btn">
         <div class="edit-btn">
-          <a href="editar/{{Tarefa.id}} "><span><i class="fa fa-edit"></i></span>
+          <a href="/overview/editar/{{Tarefa.id}} "><span><i class="fa fa-edit"></i></span>
           </div>
         </a>
         <div class="trash-btn">
-          <a href="delete/{{Tarefa.id}}" class="delete-btn"><span><i class="fa fa-trash"></i></span>
+          <a href="/overview/delete/{{Tarefa.id}}" class="delete-btn"><span><i class="fa fa-trash"></i></span>
         </div>
         </a>
       </div>
     </div>
-
+    
     {% endfor %}
   </div>
 </div>
