@@ -2,15 +2,14 @@
 
 {% block title %} OverView {% endblock %}
 
+
 {% block content %}
 
-
-
 <div class="container container-over">
-  <div class="row row-col-4">
-    
+  <div class="row row-col">
+   
     <div class="metricas ">
-      <div class="col-md-4 card-metrics item_1">Metrica 1</div>
+      <div class="card-metrics item_1"> [ {{ plot_tarefas|safe }} ]</div>
       <div class="col-md-4 card-metrics item_2">Metrica 2</div>
       <div class="col-md-4 card-metrics item_3">Metrica 3</div>
 

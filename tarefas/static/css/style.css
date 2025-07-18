@@ -1,7 +1,6 @@
 body{
     margin: 0 !important;
     padding: 0 !important;
-   
 }
 
 a{
@@ -52,6 +51,23 @@ main{
 }
 
 /*Estilo do componente List || que é a Listagem /home*/
+
+.home , .overview{
+    animation-duration: 0.5s !important;
+    
+    padding: 0px !important;
+    background-color: transparent !important;
+    border: transparent;
+    border-bottom: 0.4px solid lightblue !important;
+}
+
+.home:hover , .overview:hover{
+    animation: 0.5s !important;
+    background-color: lightblue !important;
+    border-radius: 20px !important;
+    
+}
+
 
 .list-div{
 
@@ -213,7 +229,7 @@ main{
 /* PAGINA OVERVIEW */
 
 .container{
-    height: 100vh !important;
+    min-height: 100vh !important;
     margin-top: 30px;
 }
 
@@ -238,7 +254,6 @@ main{
 }
 
 .card-metrics{
-    width: 150px ;
-    height: 110px;
+ 
     background-color: lightcoral;
 }

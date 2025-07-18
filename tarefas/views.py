@@ -5,18 +5,60 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import TarefaForm
 
+import pandas as pd 
+from plotly.offline import plot
+import plotly.express as px
 
 
 # função da pagina OverView
 @login_required
+#def overlist(request):
+# 
+#    tarefas = Tarefas.objects.all()
+#    df = pd.DataFrame(list(tarefas.values()))
+#    
+#    tarefas_list = tarefas.order_by('-created_at')
+#
+#    search = request.GET.get('search')
+#
+#    total = len(tarefas)
+#
+#    context = {
+#        'tarefas':tarefas,
+#       'total': total
+#    }
+#  
+#    if search:
+#        tarefas = Tarefas.objects.filter(titulo__icontains=search, usuario=request.user)
+#        return render(request,'tarefas/overview.html',context)
+#    else:
+#        return render(request,'tarefas/overview.html',context) # {'tarefas':tarefas_list}
+
 def overlist(request):
-    tarefas_list = Tarefas.objects.all().order_by('-created_at')
-    search = request.GET.get('search')
-    if search:
-        tarefas = Tarefas.objects.filter(titulo__icontains=search, usuario=request.user)
-        return render(request,'tarefas/overview.html',{'tarefas':tarefas})
+    tarefas = Tarefas.objects.filter(usuario=request.user)
+    
+    # Gráfico de tarefas por dia
+    df = pd.DataFrame(tarefas.values('created_at'))
+    df['data'] = pd.to_datetime(df['created_at']).dt.date
+    
+    if not df.empty:
+        fig = px.bar(
+            df.groupby('data').size().reset_index(name='count'),
+            x='data',
+            y='count',
+            title='Tarefas Criadas por Dia'
+        )
+        plot_div = plot(fig, output_type='div', config={'displayModeBar': False})
     else:
-        return render(request,'tarefas/overview.html',{'tarefas':tarefas_list})
+        plot_div = "<p>Sem dados para exibir</p>"
+    
+    context = {
+        'tarefas': tarefas.order_by('-created_at'),
+        'total_tarefas': tarefas.count(),
+        'plot_tarefas': plot_div
+    }
+    
+    return render(request, 'tarefas/overview.html', context)
 
 
 
