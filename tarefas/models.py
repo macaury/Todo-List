@@ -18,8 +18,8 @@ class Tarefas(models.Model):
     status_list = [(status_Aberto,'Em aberto'),(status_Andamento,'Em andamento'),(status_Procrastinando,'Em procrastinação'),(status_Finalizado,'Finalizado')]
 
     usuario = models.ForeignKey(get_user_model(),on_delete=models.CASCADE)
-    titulo = models.CharField(max_length=254)
-    descricao = models.TextField()
+    titulo = models.CharField(max_length=50)
+    descricao = models.TextField(blank=False,max_length=254)
     categoria= models.CharField(max_length=20,choices=categoria_list,default=sprint_semanal)
     status= models.CharField(max_length=18,choices=status_list,default=status_Aberto)
     #data_finalizacao = models.CharField(d)

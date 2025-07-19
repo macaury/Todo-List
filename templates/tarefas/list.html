@@ -5,52 +5,59 @@
 {% block content %}
 
 <div class="list-div">
-  <h3>To Do List</h3>
-
+  <div class="title">
+    <h3>To Do List</h3>
+  </div>
   <div class="row-barra ">
     <div class="col-sm-10">
       <form method="get" id="search-form">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Pesquisar" name="search" value="{{request.GET.search}}">
+          <input id="search-pesquisa" type="text" class="form-control" placeholder="Pesquisar" name="search"
+            value="{{request.GET.search}}">
           <div class="input-group-btn">
-            <button class="btn btn-default" id="search-btn" type="submit">
+            <button class="btn btn-default " id="search-btn" type="submit">
               <i class="fa fa-search"></i>
             </button>
-
           </div>
         </div>
       </form>
     </div>
-    <div class="col-sm-2">
+    <div class="col-sm-2 ">
       <a id="add-button" href="novaTarefa/">
-        <div class="add-div">
-          <i class="fa fa-plus"></i>Adicionar Tarefa
+        <div class="btn btn-primary button-tarefa  ">
+          <i class="fa fa-plus"></i> Nova Tarefa
       </a>
     </div>
   </div>
 </div>
-
-
-<div class="span-scrool" style="width:100% ;">  <span>utilize o scroll</span></div>
-
-<div class="row-item">
-
+<div class=" row span-scrool justify-content-between">
+  <span class="col-8 items_list "> Titulo</span>
+  <span class="col-2 items_list  "> Criado em </span>
+  <span class="col-1 items_list "> Editar</span>
+  <span class="col-1 items_list "> Excluir</span>
+</div>
+<div class="row-tarefas">
   {% for Tarefa in tarefas %}
-  <div class="row item ">
-    <div class="col-sm-10 ">
-      <span class="titulo-item"><a class="link" href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}}</a></span>
+  <div class="row item justify-content-between">
+    <div class="col-8 ">
+      <span class="titulo-item"><a class="link" href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}} </a>
     </div>
-    <div class="col-sm-2 icones">
-      <a href="editar/{{Tarefa.id}}"><span><i class="fa fa-edit"></i></span>
+    <div class="col-2">
+      <span class="data-criacao">{{Tarefa.created_at.day}}/{{Tarefa.created_at.month}}/{{Tarefa.created_at.year}}</span>
+    </div>
+    <div class="col-2 ">
+      <a class=" col-6 btn btn-primary edit-btn" href="editar/{{Tarefa.id}}">
+        <span>
+          <i class="fa fa-edit"></i>
+        </span>
       </a>
-      <a href="delete/{{Tarefa.id}}" class="delete-btn"><span><i class="fa fa-trash"></i></span>
+      <a class=" col-6 btn btn-primary delete-btn" href="delete/{{Tarefa.id}}">
+        <span>
+          <i class="fa fa-trash"></i>
+        </span>
       </a>
     </div>
   </div>
-
   {% endfor %}
 </div>
-
-
-
 {% endblock %}

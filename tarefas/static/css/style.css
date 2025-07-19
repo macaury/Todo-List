@@ -1,143 +1,264 @@
-body{
+body {
     margin: 0 !important;
     padding: 0 !important;
+    font-family: monospace !important;
+    background-color: #d7d7d7;
 }
 
-a{
+a {
     text-decoration: none !important;
 }
 
-main{
-    min-height: 80vh;
+main {
+    min-height: 100vh !important;
+    padding: 20px 0 !important;
 }
-.navbar-brand{
+
+.navbar-brand {
     margin-left: 20px;
 }
 
-#navbarNav .nav-item{
+
+#navbarNav .nav-item {
     margin: 5px;
 }
 
-.container-fluid{
-    padding: 10px 0;
+.navbar {
+    margin: 0 20px !important;
+    background:none !important;
+}
+
+.navbar-div {
+    padding: 6px 0;
     margin: 10px auto auto auto !important;
-    background-color: lightseagreen !important;
-    border-radius: 100px !important ;
-    
-    width: 98%;
+    background-color: #484848 !important;
+    border-radius: 80px !important;
+    box-shadow: 0px 5px 10px #9a9a9a;
 }
 
 
-.navbar-nav{
-    margin: auto !important;
-}
 
-.navbar-brand{
+.navbar-brand {
     font-weight: bold !important;
     font-size: 2em !important;
 }
 
 
 
-#footer-bottom{
-    background-color: lightseagreen !important;
+#footer-bottom {
+    background-color: #484848 !important;
     padding: 20px 0 !important;
     text-align: center;
-    border-radius: 100px 0px 0px 0 !important ;
+    border-radius: 100px 0px 0px 0 !important;
 }
 
-.fixed-bottom h4{
+.fixed-bottom h4 {
     font-size: 0.9em !important;
+}
+
+.search-pesquisa::picker{
+    background-color: #000000;
 }
 
 /*Estilo do componente List || que é a Listagem /home*/
 
-.home , .overview{
+.nav-link{
+    color: #D7D7D7 !important;
+}
+
+.nav-link:hover{
+    color: #484848 !important;
+}
+.nav-item:hover{
+    color: #000000 !important;
+}
+
+.home,
+.overview {
     animation-duration: 0.5s !important;
-    
-    padding: 0px !important;
+  
     background-color: transparent !important;
     border: transparent;
-    border-bottom: 0.4px solid lightblue !important;
+    border-bottom: 0.4px solid #D7D7D7 !important;
+    margin: 0 10px !important;
+
+    --bs-nav-link-padding-y: 0rem !important;
 }
 
-.home:hover , .overview:hover{
+.home:hover,
+.overview:hover {
     animation: 0.5s !important;
-    background-color: lightblue !important;
-    border-radius: 20px !important;
+    background-color: #D7D7D7 !important;
+    border-radius: 10px !important;
     
 }
 
+.card-over {
+    height: 300px !important;
+    width: 200px !important;
+    background-color: #484848;
+    margin: 10px !important;
+    padding: 20px !important;
 
-.list-div{
+}
 
+
+.list-div {
+    background-color: #484848;
     margin: 1.5em 10% !important;
-    border-radius: 10px;
-    border: 0.5px solid pink ;
-    padding: 10px;
+    border-radius: 30px;
+    border: 0.5px solid #686868;
+
+    padding: 40px !important;
+
+    box-shadow: 0px 9px 9px #a8a8a8;
 }
 
-.list-div h3{
-    text-align: center;
+.list-div .titulo {
+    font-size: 70px !important;
+    font-weight: 700 !important;
+    color: #289FED;
+
+    height: fit-content !important;
+}
+
+.title {
+    width: 100%;
+}
+
+.list-div h3 {
+    color: white !important;
+    font-weight: 800;
+    font-size: 2em;
+    width: fit-content !important;
+    border-bottom: 0.8px dashed white;
+}
+
+.list-div h3 {
+    margin: auto !important;
 }
 
 
-.row-barra{
+.row-barra {
     display: flex !important;
     flex-direction: row !important;
-    margin-top: 20px;
-    padding: 20px 0 !important;
-    
+    margin-top: 40px;
+
+
+
 }
 
-.row-item{
-    min-width: none;
+.search-box {
+    max-height: fit-content !important;
 }
 
-#search-form{
-   padding-right: 10px;
+#search-form {
+    margin-right: 10px;
+
 }
 
 #add-button{
-    text-decoration: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    color: #292929 !important;
+}
+.button-tarefa {
+    border: none !important;
+    background-color: #9f9f9f !important;
+    border-radius: 14px !important;
 }
 
-.items{
+.button-tarefa:hover{
+    background-color: #5FB8FF !important;
+}
+
+.items {
     text-align: end !important;
- 
+
 }
 
-.add-div{
-    color: white !important;
-    background-color: blue !important;
-    border-radius: 10px !important;
-    padding: 0.5em !important;
-    text-decoration: none !important;
-    
-}
 /*Icon search   */
-.input-group-btn{
-    border: 1px solid lightgray;
-    border-radius: 0 10px 10px 0 !important;
+
+.row-tarefas {
+    background-color: #292929;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
 }
+
+.span-scrool {
+    position: relative;
+    justify-self: center !important;
+
+    font-size: 12px !important;
+    padding: 5px;
+    border-radius: 5px;
+
+    margin: 20px 0;
+    height: auto !important;
+    width: 100% !important;
+
+    background-color: #292929 !important;
+
+}
+
+.input-group-btn {
+
+    background-color: #484848;
+    border: 1px solid lightgray;
+    border-radius: 0 15px 15px 0 !important;
+
+}
+
+.input-group-btn:hover {
+    background-color: #5FB8FF;
+    border: 1px solid #5FB8FF;
+
+}
+
+.fa-search {
+    color: white;
+}
+
+
+.link {
+    font-size: 20px !important;
+}
+
+.edit-btn,
+.delete-btn {
+    background: none;
+    border: none;
+
+    width: fit-content !important;
+
+}
+
+.delete-btn {
+    margin: auto !important;
+}
+
+
+.edit-btn:hover {
+    background-color: #442801;
+}
+
+.delete-btn:hover {
+    background-color: #c60101;
+}
+
 
 /* item da listagem*/
 
 
-.tarefa-view{
+.tarefa-view {
 
-    margin: 40px auto auto auto  !important;
-
+    margin: 40px auto auto auto !important;
     border-radius: 20px;
-    border: 1px solid #000000;
-
+    border: 1px solid #484848;
     padding: 20px;
     width: 500px !important;
-    min-height: 400px !important ;
-    
-    background-color: white;
+    min-height: 400px !important;
+
+    background-color: #292929;
 }
 
 .list-tarefa p {
@@ -145,115 +266,137 @@ main{
 }
 
 .list-tarefa {
-    min-width: 100% ;
+    min-width: 100%;
     height: fit-content !important;
-    width: 100%;
 }
 
 .list-tarefa p {
     display: -webkit-box;
-    -webkit-line-clamp: 3 !important; /* máximo de linhas */
+    -webkit-line-clamp: 3 !important;
+    /* máximo de linhas */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.item{
-    margin-left: 10px;
-    border-bottom: 0.5px dashed lightgrey !important;
-    height: 3em !important;
-    font-size: 1.5em !important;
+.item {
+
+    height: 50px !important;
     margin-top: 1em !important;
-    color: black !important;
-   
+    font-size: 1.5em !important;
+
+    border-bottom: 0.5px dashed rgba(121, 121, 121, 0.692) !important;
+
 }
 
-.titulo-item{
+.titulo-item {
     margin-left: 10px;
+
 }
 
 /* Estilo da Pagina de login */
 
-.card{
-    max-width: 320px !important;
+.btn-login{
+    background-color: #484848 !important;
+    border: none;
 }
 
-
-.btn-login button{
-    margin: auto !important;
+.btn-login:hover{
+    background-color: #9f9f9f !important ;
+    color: #484848 !important ;
 }
 
-.card{
-    -webkit-box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0,0,0,0);
-}
-
-
-
-.auth-card{
-    margin: 50px 0 !important;
-}
-
-.change-form-p{
-    padding-top: 18px !important;
-    text-align: center !important;
-}
 
 
 /*Box Nome do usuario*/
-.user-div{
-    padding: 10px 15px;
-    color:white !important;
-    font-size: 0.8em;
-    border: 1px solid lightblue;
+.user-div {
+    margin-right: 20px;
+    padding: 7px 15px;
+    color: white !important;
+    font-size: 0.9em;
+
+    word-spacing: 2px;
+    font-weight: bold;
     border-radius: 7px;
 }
 
-.user-div:hover{
-    background-color: black;
-}
-.dropdown-menu{
-   padding: 0 !important;
+.dropdown-toggle:hover {
+    color: #5FB8FF !important;
+
 }
 
-.btn-logout{
+.dropdown-menu {
+    padding: 0 !important;
+}
+
+.btn-logout {
     width: 100%;
     text-align: start !important;
 
 }
-.btn-logout:hover{
-    background-color: aqua;
-    
-}
+
 
 /* PAGINA OVERVIEW */
 
-.container{
-    min-height: 100vh !important;
-    margin-top: 30px;
-}
 
-.card-over{
+
+.card-over {
     height: fit-content !important;
     max-height: 300px;
 }
 
-.descricao p{
-    white-space: nowrap !important; /* Prevents text from wrapping to the next line */
-    overflow: hidden !important; /* Hides any overflowed text */
-    width: 10px !important; 
-
+.descricao p {
+    white-space: nowrap !important;
+    /* Prevents text from wrapping to the next line */
+    overflow: hidden !important;
+    /* Hides any overflowed text */
+    width: 10px !important;
     border: 1px solid #000000;
 }
 
-
-.metricas{
-    width: 100% !important;
-    background-color: wheat;
-    min-width: 350px !important;
+.categoria {
+    background-color: #484848;
+    border-radius: 20px;
+    color: white !important;
+    font-size: 14px !important;
+    padding: 10px !important;
 }
 
-.card-metrics{
- 
-    background-color: lightcoral;
+.filter {
+    min-width: 50px !important;
+    min-height: 20px !important;
+}
+
+.data-criacao {
+    font-size: 14px;
+}
+
+.link{
+    font-size: 18px !important;
+
+}
+
+
+.items_list {
+    font-size: 12px;
+
+}
+
+.items_list,
+.data-criacao,
+.fa-edit,
+.fa-trash,
+.link {
+    color: #9f9f9f !important;
+}
+
+.data-criacao,
+.items_list ,
+.link{
+    font-weight: 900 !important;
+}
+
+
+.card-login{
+   box-shadow: 0px 9px 9px #a8a8a8;
 }

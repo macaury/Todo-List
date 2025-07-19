@@ -5,27 +5,61 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="col-md-4 offset-md-4">
-        <div class="card auth-card">
-            <div class="card-body">
-                <h4 class="card-title text-center">To Do List</h4>
-                <form class="justify-content-center" method="post">
-                    {% csrf_token %}
-                    <input type="hidden" name="next" class="btn btn-primary" value="{{ next }}"></input>
+<!-- Section: Design Block -->
+<section class="login">
+    <!-- Jumbotron -->
 
-                    {{ form|crispy }}
+    <div class="container">
+        <div class="row gx-lg- justify-content-between">
 
-                    <div class="btn-login">
-                        <button type="submit" class="btn btn-primary btn-block ">Entrar</button>
+            <div class="col-6 mb-5 mb-lg-0">
+                <h1 class="my-5 display-3 fw-bold ls-tight">
+                    The best offer <br />
+                    <span class="text-primary">for your business</span>
+                </h1>
+                <p style="color: hsl(217, 10%, 50.8%)">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eveniet, itaque accusantium odio, soluta, corrupti aliquam
+                    quibusdam tempora at cupiditate quis eum maiores libero
+                    veritatis? Dicta facilis sint aliquid ipsum atque?
+                </p>
+            </div>
+            
+            <div class="col-6">
+                <div class="card card-login">
+                    <div class="card-body py-5">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">To Do List</h4>
+                            <form class="justify-content-center" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" class="btn btn-primary" value="{{ next }}"></input>
+
+                                {{ form|crispy }}
+                                
+                                    <button type="submit" class="btn btn-primary btn-login ">Entrar</button>
+                                
+                            </form>
+                            <p class="change-form-p"> Registre <a href="/accounts/register">Sua conta</a></p>
+                        </div>
 
                     </div>
-                </form>
-                <p class="change-form-p"> Registre <a href="/accounts/register">Sua conta</a></p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->
+
+
+
+
+
+
+
+
+
 
 
 {% endblock %}

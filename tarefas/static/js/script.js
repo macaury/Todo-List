@@ -22,3 +22,10 @@ document.querySelectorAll(".delete-btn").forEach(
 document.getElementById("search-btn").addEventListener("click",function(){
     document.getElementById("search-form").onsubmit();
 });
+
+
+document.getElementById('.filter-btn').addEventListener(checkbox => {
+    checkbox.addEventListener('change', () => {
+        checkbox.closest('form').submit();
+    });
+});

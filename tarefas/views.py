@@ -12,6 +12,32 @@ import plotly.express as px
 
 # função da pagina OverView
 @login_required
+def overlist(request):
+    tarefas = Tarefas.objects.filter(usuario=request.user)
+    # Gráfico de tarefas por dia
+    df = pd.DataFrame(tarefas.values('created_at'))
+    df['data'] = pd.to_datetime(df['created_at']).dt.date
+    
+    if not df.empty:
+        fig = px.bar(
+            df.groupby('data').size().reset_index(name='count'),
+            x='data',
+            y='count',
+            title='Tarefas Criadas por Dia'
+        )
+        plot_div = plot(fig, output_type='div', config={'displayModeBar': False})
+    else:
+        plot_div = "<p>Sem dados para exibir</p>"
+    
+    context = {
+        'tarefas': tarefas.order_by('-created_at'),
+        'total_tarefas': tarefas.count(),
+        'plot_tarefas': plot_div
+    }
+
+    
+    
+    return render(request, 'tarefas/overview.html', context)
 #def overlist(request):
 # 
 #    tarefas = Tarefas.objects.all()
@@ -34,33 +60,29 @@ import plotly.express as px
 #    else:
 #        return render(request,'tarefas/overview.html',context) # {'tarefas':tarefas_list}
 
-def overlist(request):
-    tarefas = Tarefas.objects.filter(usuario=request.user)
-    
-    # Gráfico de tarefas por dia
-    df = pd.DataFrame(tarefas.values('created_at'))
-    df['data'] = pd.to_datetime(df['created_at']).dt.date
-    
-    if not df.empty:
-        fig = px.bar(
-            df.groupby('data').size().reset_index(name='count'),
-            x='data',
-            y='count',
-            title='Tarefas Criadas por Dia'
-        )
-        plot_div = plot(fig, output_type='div', config={'displayModeBar': False})
-    else:
-        plot_div = "<p>Sem dados para exibir</p>"
-    
+@login_required
+def filtro_categoria(request):
+
+    status_filter = request.GET.get('status')
+    categoria_filter = request.GET.get('categoria')
+
+    tarefas = Tarefas.objects.filter(usuario=request.user).order_by('-created_at')
+
+    if status_filter:
+        tarefas = tarefas.filter(status__icontains=status_filter)
+
+    if categoria_filter:
+        tarefas = tarefas.filter(categoria__icontains=categoria_filter)
+
     context = {
-        'tarefas': tarefas.order_by('-created_at'),
-        'total_tarefas': tarefas.count(),
-        'plot_tarefas': plot_div
+        'tarefas': tarefas,
+        'status_choices': Tarefas.status_list,
+        'categoria_choices': Tarefas.categoria_list,
+        'status_selecionado': status_filter,
+        'categoria_selecionada': categoria_filter
     }
-    
-    return render(request, 'tarefas/overview.html', context)
 
-
+    return render(request, 'overview.html', context)
 
 # renderia as listagem de tarefas filtrada pelo usuario logado
 @login_required

@@ -1,45 +1,77 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %} OverView {% endblock %}
 
 
+
+
+
 {% block content %}
 
-<div class="container container-over">
-  <div class="row row-col">
-   
-    <div class="metricas ">
-      <div class="card-metrics item_1"> [ {{ plot_tarefas|safe }} ]</div>
-      <div class="col-md-4 card-metrics item_2">Metrica 2</div>
-      <div class="col-md-4 card-metrics item_3">Metrica 3</div>
+
+<div class="list-div">
+  <div class="title">
+    <h3 >Visão Geral</h3>
+
+  </div>
 
 
+   <div class="row-barra ">
+    <div class="col-sm-10">
+      <form method="get" id="search-form">
+        <div class="input-group">
+          <input id="search-pesquisa" type="text" class="form-control" placeholder="Pesquisar" name="search"
+            value="{{request.GET.search}}">
+          <div class="input-group-btn">
+            <button class="btn btn-default " id="search-btn" type="submit">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
+    <div class="col-sm-2 ">
+      <a id="add-button" href="novaTarefa/">
+        <div class="btn btn-primary button-tarefa  ">
+          <i class="fa fa-plus"></i> Nova Tarefa
+      </a>
+    </div>
+  </div>
+  
 
-    {% for Tarefa in tarefas %}
 
-    <div class="card card-over item text-center " style="width: 16rem;">
-      <div class="col ">
-        <span class="tag">{{user.username}}</span>
+</div>
+
+
+
+
+
+<div class="container">
+
+  {% for Tarefa in tarefas %}
+
+  <div class="col-">
+    <div class="card card-over text-center ">
+      <div class="Top ">
+        <span class="status">{{Tarefa.status}}</span>
         <span class="titulo-item"><a class="link" href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}}</a></span>
       </div>
-      <div class="col" class="descricao">
-        <span ><p  href="/overview/tarefa/{{Tarefa.id}}" text-overflow:ellipsis;>{{Tarefa.descricao}}</a></span>
+      <div class="middle" class="descricao">
+        <span>
+          <p href="/overview/tarefa/{{Tarefa.id}}" text-overflow:ellipsis;>{{Tarefa.descricao}}</a>
+        </span>
       </div>
-      <div class="row-btn">
-        <div class="edit-btn">
-          <a href="/overview/editar/{{Tarefa.id}} "><span><i class="fa fa-edit"></i></span>
-          </div>
-        </a>
-        <div class="trash-btn">
-          <a href="/overview/delete/{{Tarefa.id}}" class="delete-btn"><span><i class="fa fa-trash"></i></span>
-        </div>
-        </a>
+      <div class="col">
+        <span class="categoria">{{Tarefa.categoria}}</span>
       </div>
     </div>
-    
-    {% endfor %}
   </div>
+
+  {% endfor %}
+
+
 </div>
+
 
 {% endblock %}
