@@ -1,15 +1,10 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
-
 {% block title %} Login {% endblock %}
-
 {% block content %}
 
-<!-- Section: Design Block -->
-<section class="login">
-    <!-- Jumbotron -->
 
-    <div class="container">
+    <div class="container container-login">
         <div class="row gx-lg- justify-content-between">
 
             <div class="col-6 mb-5 mb-lg-0">
@@ -24,42 +19,29 @@
                     veritatis? Dicta facilis sint aliquid ipsum atque?
                 </p>
             </div>
-            
             <div class="col-6">
                 <div class="card card-login">
-                    <div class="card-body py-5">
+                    <div class="card-body ">
                         <div class="card-body">
-                            <h4 class="card-title text-center">To Do List</h4>
-                            <form class="justify-content-center" method="post">
+                            <img src="./assets/Logo-Colaborelist-fundo-black.png" width="400" height="200" alt="" srcset="" /> 
+                            <form class="justify-content-center login-box-input" method="post">
                                 {% csrf_token %}
                                 <input type="hidden" name="next" class="btn btn-primary" value="{{ next }}"></input>
-
                                 {{ form|crispy }}
-                                
-                                    <button type="submit" class="btn btn-primary btn-login ">Entrar</button>
-                                
+                                 <p class="change-pass-p"> Esqueceu <a href="/accounts/password_change/">sua senha ?</a></p>
+                                 <div class="row justify-content-center">
+                                     <button type="submit" class="btn btn-primary btn-login  ">Entrar</button>
+                                 </div>
                             </form>
-                            <p class="change-form-p"> Registre <a href="/accounts/register">Sua conta</a></p>
-                        </div>
+                            <div class="row">
 
+                                <p class="change-form-p"> Ainda não possui conta? <a href="/accounts/register">Registre uma!</a></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Jumbotron -->
-</section>
-<!-- Section: Design Block -->
-
-
-
-
-
-
-
-
-
-
 
 {% endblock %}

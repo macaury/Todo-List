@@ -3,6 +3,8 @@ body {
     padding: 0 !important;
     font-family: monospace !important;
     background-color: #d7d7d7;
+
+
 }
 
 a {
@@ -29,35 +31,28 @@ main {
 }
 
 .navbar-div {
-    padding: 6px 0;
+    padding: 15px !important;
     margin: 10px auto auto auto !important;
     background-color: #484848 !important;
     border-radius: 80px !important;
     box-shadow: 0px 5px 10px #9a9a9a;
 }
 
-
-
 .navbar-brand {
     font-weight: bold !important;
     font-size: 2em !important;
 }
-
-
-
 #footer-bottom {
-    background-color: #484848 !important;
+    background-color: transparent !important;
     padding: 20px 0 !important;
     text-align: center;
     border-radius: 100px 0px 0px 0 !important;
 }
-
 .fixed-bottom h4 {
     font-size: 0.9em !important;
 }
-
-.search-pesquisa::picker{
-    background-color: #000000;
+#search-pesquisa{
+    background-color: #D7D7D7;
 }
 
 /*Estilo do componente List || que é a Listagem /home*/
@@ -93,25 +88,118 @@ main {
     
 }
 
-.card-over {
-    height: 300px !important;
-    width: 200px !important;
-    background-color: #484848;
-    margin: 10px !important;
+.row-over{
+    flex-direction: row !important;
+  
+}
+.descricao{
+    
+    border-radius: 15px !important;
+    color: #292929;
+}
+
+
+.over-container .descri{
+    text-align: center !important;
+   margin: 10px 0 !important;
+    color: #d6d6d6;
+
+}
+.btn-ler{
+    background-color: transparent !important;
+    border: none !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+
+}
+.btn-ler a{
+    color: #484848 !important;
+
+}
+
+.card-add-tarefa{
+    box-shadow: 0px 9px 9px #a8a8a8;
+    background-color: transparent !important;
+    border: 1px solid #d7d7d7;
+    margin: 10px 15px 15px 20px  !important;
+}
+.icon{
+ background-color: #fff;
+ height: fit-content !important;
+}
+
+.card-add-tarefa .SomaKi{
+    background-color: #289FED !important;
+}
+
+.card{
+    position:  relative !important;
+    border-radius: 20px !important;
     padding: 20px !important;
+    overflow: hidden;
+
+    box-shadow: 1px 9px 9px #323232;
 
 }
 
 
+
+.card-over {
+    height: 320px !important;
+    width: 280px !important;
+    background-color: #d7d7d7 !important;
+    margin: 10px !important;
+    overflow: hidden;
+    flex-direction: column !important;
+
+ 
+
+}
+
+.btn-success{
+
+    margin: auto !important;
+    padding: 10px !important;
+    background-color: #289FED !important;
+    width: fit-content !important;
+    
+}
+
+.box-add-tarefa h1{
+    font-weight: 900 !important;
+    color: #d7d7d7 !important;
+    text-align: center;
+    margin: 0 20px 20px 0 !important;
+    font-size: 2.5rem !important;
+   
+}
+
+.box-add-tarefa label{
+    margin: 10px 0 !important ;
+    color: #eaeaea !important;
+    font-size: 18px !important;
+}
+
+.box-add-tarefa textarea{
+    height: 100px !important;
+}
+
+.col-novatarefa{
+    width: 200px !important;
+}
+
 .list-div {
+
+    align-items: center !important;
+    margin: auto !important;
     background-color: #484848;
-    margin: 1.5em 10% !important;
+    
     border-radius: 30px;
     border: 0.5px solid #686868;
-
     padding: 40px !important;
-
     box-shadow: 0px 9px 9px #a8a8a8;
+    
+
 }
 
 .list-div .titulo {
@@ -143,13 +231,13 @@ main {
     display: flex !important;
     flex-direction: row !important;
     margin-top: 40px;
-
-
-
+    padding: 10px;
 }
+
 
 .search-box {
     max-height: fit-content !important;
+    width:  100% !important;
 }
 
 #search-form {
@@ -164,6 +252,8 @@ main {
     border: none !important;
     background-color: #9f9f9f !important;
     border-radius: 14px !important;
+    height: 100% !important;
+    width: 180px !important;
 }
 
 .button-tarefa:hover{
@@ -181,7 +271,7 @@ main {
     background-color: #292929;
     overflow: hidden;
     border-radius: 10px;
-    width: 100%;
+    width: 100% !important;
 }
 
 .span-scrool {
@@ -203,7 +293,7 @@ main {
 .input-group-btn {
 
     background-color: #484848;
-    border: 1px solid lightgray;
+    border: 1px solid #d7d7d7;
     border-radius: 0 15px 15px 0 !important;
 
 }
@@ -280,7 +370,7 @@ main {
 }
 
 .item {
-
+   
     height: 50px !important;
     margin-top: 1em !important;
     font-size: 1.5em !important;
@@ -288,17 +378,46 @@ main {
     border-bottom: 0.5px dashed rgba(121, 121, 121, 0.692) !important;
 
 }
+.titulo-home a{
+    word-spacing: -0.4% !important;
+    font-size: 0.9em !important;
+    font-weight: 800;
+    text-decoration:  none !important;
+    color: #d9d9d9 !important;
+}
 
-.titulo-item {
-    margin-left: 10px;
 
+.titulo-item a {
+    word-spacing: -0.4% !important;
+    font-size: 1.2em !important;
+    font-weight: 800;
+    text-decoration:  none !important;
+    color: #484848 !important;
+
+    
+}
+
+.titulo-item{
+    text-align: center !important;
+    margin-bottom: 20px  !important;
 }
 
 /* Estilo da Pagina de login */
+.change-form-p{
+    margin-top: 20px !important;
+}
+
 
 .btn-login{
     background-color: #484848 !important;
     border: none;
+    margin: 20px 0 20px 0 !important;
+    padding:  20px !important;
+    width: 190px !important;
+    border-radius: 15px;
+    
+    font-weight: 700;
+    font-size: 1.2rem !important;
 }
 
 .btn-login:hover{
@@ -306,6 +425,9 @@ main {
     color: #484848 !important ;
 }
 
+.login-box-input{
+    margin-top: 20px;
+}
 
 
 /*Box Nome do usuario*/
@@ -339,27 +461,34 @@ main {
 /* PAGINA OVERVIEW */
 
 
-
-.card-over {
-    height: fit-content !important;
-    max-height: 300px;
-}
-
 .descricao p {
     white-space: nowrap !important;
     /* Prevents text from wrapping to the next line */
     overflow: hidden !important;
     /* Hides any overflowed text */
-    width: 10px !important;
-    border: 1px solid #000000;
+    width: 100% !important;
+
 }
+
 
 .categoria {
     background-color: #484848;
-    border-radius: 20px;
     color: white !important;
-    font-size: 14px !important;
-    padding: 10px !important;
+    padding: 8px !important;
+
+
+}
+.status{
+    color: red !important;
+    border: 0.5px solid red !important;
+    padding: 10px;
+}
+
+.categoria ,.status {
+    border-radius: 20px;
+    font-size: 12px !important;
+    width: 100px !important;
+    margin: auto !important;
 }
 
 .filter {
@@ -369,11 +498,6 @@ main {
 
 .data-criacao {
     font-size: 14px;
-}
-
-.link{
-    font-size: 18px !important;
-
 }
 
 
@@ -398,5 +522,35 @@ main {
 
 
 .card-login{
+    background-color: #e9e9e9 !important;
    box-shadow: 0px 9px 9px #a8a8a8;
+   margin-left: 10em !important ;
+   padding: 20px;
+   border-radius: 30px !important;
+}
+.card-login input{
+    border-radius: 10px !important;
+    margin: 14px 0 !important;
+}
+
+.card-body{
+    padding-bottom: 10px;
+   
+}
+.change-pass-p{
+   
+    color: #484848;
+}
+
+.change-pass-p a{
+     color: #750808;
+}
+
+
+.container-login{
+    margin-top: 40px !important;
+}
+.card-title{
+    margin: 0 0 40px  0 !important;
+    font-size: 2em !important;
 }

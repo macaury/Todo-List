@@ -3,22 +3,14 @@
 
 {% block title %} OverView {% endblock %}
 
-
-
-
-
 {% block content %}
 
-
-<div class="list-div">
+<div class="container list-div">
   <div class="title">
-    <h3 >Visão Geral</h3>
-
+    <h3>Visão Geral</h3>
   </div>
-
-
-   <div class="row-barra ">
-    <div class="col-sm-10">
+  <div class="row-barra ">
+    <div class=" search-box justify-content-end">
       <form method="get" id="search-form">
         <div class="input-group">
           <input id="search-pesquisa" type="text" class="form-control" placeholder="Pesquisar" name="search"
@@ -31,47 +23,56 @@
         </div>
       </form>
     </div>
-    <div class="col-sm-2 ">
+    <div class="col col-novatarefa">
       <a id="add-button" href="novaTarefa/">
         <div class="btn btn-primary button-tarefa  ">
           <i class="fa fa-plus"></i> Nova Tarefa
       </a>
     </div>
   </div>
-  
-
-
 </div>
-
-
-
-
-
-<div class="container">
-
-  {% for Tarefa in tarefas %}
-
-  <div class="col-">
-    <div class="card card-over text-center ">
-      <div class="Top ">
-        <span class="status">{{Tarefa.status}}</span>
-        <span class="titulo-item"><a class="link" href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}}</a></span>
-      </div>
-      <div class="middle" class="descricao">
-        <span>
-          <p href="/overview/tarefa/{{Tarefa.id}}" text-overflow:ellipsis;>{{Tarefa.descricao}}</a>
-        </span>
-      </div>
-      <div class="col">
-        <span class="categoria">{{Tarefa.categoria}}</span>
+<div class="container  over-container">
+  <div class="row descri">
+    <span> Todas as tarefas disponiveis </span>
+  </div>
+  <div class="row row-over justify-content-start">
+    <div class="card-add-tarefa card col text-center ">
+      <div class="align-items-center">
+      <span>
+        Nova tarefa
+      </span>
+        <div class="icon">
+          <a href="" class=" SomaKi"></a>
+        </div>
       </div>
     </div>
+
+    {% for Tarefa in tarefas %}
+
+    <div class="col-3">
+      <div class="card card-over text-center align-items-between  " href="/tarefa/{{Tarefa.id}} ">
+        <div class=" Top mb-4 ">
+          <div class="row titulo-item">
+            <span><a href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}}</a></span>
+          </div>
+          <div class="row  mt-2 mb-2 align-items-center">
+            <span class=" col-6 status">{{Tarefa.status}}</span>
+            <span class=" col-6 categoria">{{Tarefa.categoria}}</span>
+          </div>
+        </div>
+        <div class=" row descricao ">
+          <span>
+            <p text-overflow:ellipsis;>{{Tarefa.descricao}}</a>
+          </span>
+          <div class="mt-auto p-2 btn btn-primary btn-ler">
+            <a href="/tarefa/{{Tarefa.id}}">continuar lendo...</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
   </div>
-
-  {% endfor %}
-
-
 </div>
-
 
 {% endblock %}

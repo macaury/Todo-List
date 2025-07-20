@@ -4,18 +4,17 @@
 {% block title %} Adicione um tarefa {% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="list-div">
-        <h2>Adicione sua nova Tarefa:</h2>
+<div class="container align-items-center">
+    <div class=" list-div box-add-tarefa ">
+        <h1>Nova tarefa</h2>
         <form method="POST">
             {% csrf_token %}
             {{ form|crispy }}
-
-            <input class="btn btn-success" type="submit" value="Adicionar Tarefa">
+            <div class="row">
+                <input class="btn btn-success" type="submit" value="Adicionar Tarefa">
+            </div>
         </form>
-
     </div>
-
 </div>
 
 {% endblock %}

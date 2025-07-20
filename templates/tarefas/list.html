@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="list-div">
+<div class="list-div container">
   <div class="title">
     <h3>To Do List</h3>
   </div>
@@ -36,11 +36,11 @@
   <span class="col-1 items_list "> Editar</span>
   <span class="col-1 items_list "> Excluir</span>
 </div>
-<div class="row-tarefas">
+<div class=" row row-tarefas ">
   {% for Tarefa in tarefas %}
   <div class="row item justify-content-between">
     <div class="col-8 ">
-      <span class="titulo-item"><a class="link" href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}} </a>
+      <span class="titulo-home  "><a href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}} </a>
     </div>
     <div class="col-2">
       <span class="data-criacao">{{Tarefa.created_at.day}}/{{Tarefa.created_at.month}}/{{Tarefa.created_at.year}}</span>
