@@ -4,22 +4,20 @@
 
 {% block content %}
 
-<div class="container">
-
-  <div class="tarefa-view">
-    
-    <div class="list-tarefa">
-      <div class="top">
-        <h3>{{ tarefa.titulo }}</h3>
-        <span class="categoria" >{{tarefa.categoria}}</span>
+<div class="container ">
+  <div class="card  tarefa-view text-center ">   
+      <div class="col ">  
+          <h2>{{ tarefa.titulo }}</h2>
+          <span>icon</span>   
+        <div class="col row-tags">
+          <span class="status md-4" >{{tarefa.status}}</span>
+          <span class="categoria" >{{tarefa.categoria}}</span>
+        </div>
       </div>
-      <div class="bottom">
-
+      <div class="col bottom descricao-view">
         <p>{{ tarefa.descricao }}</p>
       </div>
-    </div>
   </div>
 </div>
-  
 
 {% endblock %}

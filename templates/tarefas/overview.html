@@ -36,15 +36,21 @@
     <span> Todas as tarefas disponiveis </span>
   </div>
   <div class="row row-over justify-content-start">
-    <div class="card-add-tarefa card col text-center ">
-      <div class="align-items-center">
-      <span>
-        Nova tarefa
-      </span>
-        <div class="icon">
-          <a href="" class=" SomaKi"></a>
+    <div class="col-3 mt-4">
+      <div class="card-add-tarefa card  text-center ">
+        <div class="">
+          <span>
+            Nova tarefa
+          </span>
+          <div class="icon">
+            <span>
+
+              <a href="" class=" SomaKi"> icon </a>
+            </span>
+          </div>
         </div>
       </div>
+
     </div>
 
     {% for Tarefa in tarefas %}
@@ -70,9 +76,9 @@
         </div>
       </div>
     </div>
-
     {% endfor %}
   </div>
 </div>
+
 
 {% endblock %}

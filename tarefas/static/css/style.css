@@ -3,8 +3,6 @@ body {
     padding: 0 !important;
     font-family: monospace !important;
     background-color: #d7d7d7;
-
-
 }
 
 a {
@@ -12,14 +10,13 @@ a {
 }
 
 main {
-    min-height: 100vh !important;
+    min-height: 80vh !important;
     padding: 20px 0 !important;
 }
 
 .navbar-brand {
     margin-left: 20px;
 }
-
 
 #navbarNav .nav-item {
     margin: 5px;
@@ -40,7 +37,8 @@ main {
 
 .navbar-brand {
     font-weight: bold !important;
-    font-size: 2em !important;
+    font-size: 1.5em !important;
+    color: #d7d7d7;
 }
 #footer-bottom {
     background-color: transparent !important;
@@ -98,38 +96,37 @@ main {
     color: #292929;
 }
 
-
 .over-container .descri{
     text-align: center !important;
    margin: 10px 0 !important;
     color: #d6d6d6;
-
 }
 .btn-ler{
     background-color: transparent !important;
     border: none !important;
     font-size: 12px !important;
     font-weight: 500 !important;
-
 }
 .btn-ler a{
     color: #484848 !important;
-
 }
 
 .card-add-tarefa{
+    margin: auto !important;
     box-shadow: 0px 9px 9px #a8a8a8;
     background-color: transparent !important;
     border: 1px solid #d7d7d7;
-    margin: 10px 15px 15px 20px  !important;
+    width: 250px !important;
+    
+    margin: 10px   !important;
+    height: 270px !important;
 }
-.icon{
- background-color: #fff;
- height: fit-content !important;
-}
+
 
 .card-add-tarefa .SomaKi{
     background-color: #289FED !important;
+
+  
 }
 
 .card{
@@ -137,12 +134,9 @@ main {
     border-radius: 20px !important;
     padding: 20px !important;
     overflow: hidden;
-
-    box-shadow: 1px 9px 9px #323232;
+    box-shadow: 10px 10px 17px #323232e3;
 
 }
-
-
 
 .card-over {
     height: 320px !important;
@@ -151,13 +145,9 @@ main {
     margin: 10px !important;
     overflow: hidden;
     flex-direction: column !important;
-
- 
-
 }
 
 .btn-success{
-
     margin: auto !important;
     padding: 10px !important;
     background-color: #289FED !important;
@@ -189,8 +179,6 @@ main {
 }
 
 .list-div {
-
-    align-items: center !important;
     margin: auto !important;
     background-color: #484848;
     
@@ -198,8 +186,6 @@ main {
     border: 0.5px solid #686868;
     padding: 40px !important;
     box-shadow: 0px 9px 9px #a8a8a8;
-    
-
 }
 
 .list-div .titulo {
@@ -231,7 +217,7 @@ main {
     display: flex !important;
     flex-direction: row !important;
     margin-top: 40px;
-    padding: 10px;
+   
 }
 
 
@@ -268,20 +254,22 @@ main {
 /*Icon search   */
 
 .row-tarefas {
+
     background-color: #292929;
     overflow: hidden;
     border-radius: 10px;
-    width: 100% !important;
+   
 }
 
-.span-scrool {
+.span-scrool  {
     position: relative;
     justify-self: center !important;
 
-    font-size: 12px !important;
+    font-size: 14px !important;
     padding: 5px;
     border-radius: 5px;
 
+    padding: 10px 0 !important;
     margin: 20px 0;
     height: auto !important;
     width: 100% !important;
@@ -340,15 +328,34 @@ main {
 
 
 .tarefa-view {
-
-    margin: 40px auto auto auto !important;
-    border-radius: 20px;
-    border: 1px solid #484848;
-    padding: 20px;
-    width: 500px !important;
+    margin: 40px auto !important;
+    border-radius: 30px !important;
+    padding: 50px !important;
+    width: 700px !important;
     min-height: 400px !important;
+    background-color: #d7d7d7;
+    box-shadow: 10px 10px 20px #4848448a !important;
+     
+}
 
-    background-color: #292929;
+.row-tags{
+    margin: 35px 0 !important;
+}
+
+.tarefa-view .descricao-view{
+    background-color: #8d8c8c;
+    border-radius: 20px !important;
+    padding: 20px !important;
+}
+
+.tarefa-view .descricao-view p{
+    text-align: start !important;
+}
+
+.tarefa-view h2{
+    font-size: 30px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
 }
 
 .list-tarefa p {
@@ -368,15 +375,15 @@ main {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.row-tarefas .item{
+    margin-left: calc(-.5 * var(--bs-gutter-x)) !important;
+}
 
 .item {
-   
-    height: 50px !important;
-    margin-top: 1em !important;
+    
+    margin:  10px !important;
     font-size: 1.5em !important;
-
     border-bottom: 0.5px dashed rgba(121, 121, 121, 0.692) !important;
-
 }
 .titulo-home a{
     word-spacing: -0.4% !important;
@@ -384,6 +391,8 @@ main {
     font-weight: 800;
     text-decoration:  none !important;
     color: #d9d9d9 !important;
+
+    margin-left: 30px !important;
 }
 
 
@@ -502,7 +511,7 @@ main {
 
 
 .items_list {
-    font-size: 12px;
+    font-size: 13px;
 
 }
 
@@ -553,4 +562,8 @@ main {
 .card-title{
     margin: 0 0 40px  0 !important;
     font-size: 2em !important;
+}
+
+.logo img{
+    margin: 100px !important;
 }

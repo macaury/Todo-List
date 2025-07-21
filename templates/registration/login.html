@@ -22,8 +22,10 @@
             <div class="col-6">
                 <div class="card card-login">
                     <div class="card-body ">
-                        <div class="card-body">
-                            <img src="./assets/Logo-Colaborelist-fundo-black.png" width="400" height="200" alt="" srcset="" /> 
+                        <div class="card-body ">
+                           
+                                <img class="col " src="http://localhost:8000/static/assets/Logo-Colaborelist-fundo-black.png"  >
+                            
                             <form class="justify-content-center login-box-input" method="post">
                                 {% csrf_token %}
                                 <input type="hidden" name="next" class="btn btn-primary" value="{{ next }}"></input>

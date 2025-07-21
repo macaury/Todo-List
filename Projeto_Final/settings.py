@@ -42,8 +42,6 @@ LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/accounts/login/'
 
-TESTE="12"
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -124,5 +122,15 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static'),
+]
+
+LOGO_PRETA = 'assets/Logo-Colaborelist-fundo-black.png'
+
+
+
+LOGO_VERMELHO = 'assets/Logo_Colaborelist_vermelho.png'
 
 
