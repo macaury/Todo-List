@@ -283,7 +283,6 @@ main {
     background-color: #484848;
     border: 1px solid #d7d7d7;
     border-radius: 0 15px 15px 0 !important;
-
 }
 
 .input-group-btn:hover {
@@ -295,7 +294,6 @@ main {
 .fa-search {
     color: white;
 }
-
 
 .link {
     font-size: 20px !important;
