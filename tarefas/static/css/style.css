@@ -96,6 +96,10 @@ main {
     color: #292929;
 }
 
+.descri{
+    padding: 10px 0 !important;
+}
+
 .over-container .descri{
     text-align: center !important;
    margin: 10px 0 !important;

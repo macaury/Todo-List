@@ -12,15 +12,49 @@
   <div class="row-barra ">
     <div class=" search-box justify-content-end">
       <form method="get" id="search-form">
-        <div class="input-group">
+        <div class="row mb-4">
+
           <input id="search-pesquisa" type="text" class="form-control" placeholder="Pesquisar" name="search"
             value="{{request.GET.search}}">
+
+        </div>
+        <div class="input-group">
+
+
+          <div class="col filtro">
+
+            <select class="form-select" name="status" aria-label="Default select example">
+              <option value="" {% if not request.GET.status %} selected {% endif %}>status</option>
+              <option value="aberto" {% if request.GET.status %}selected{% endif %}>aberto</option>
+              <option value="andamento" {% if request.GET.status %}selected{% endif %}>andamento
+              </option>
+              <option value="standby" {% if request.GET.status %}selected{% endif %}>standby
+              </option>
+              <option value="finalizado" {% if request.GET.status %}selected{% endif %}>finalizado
+              </option>
+            </select>
+          </div>
+          <div class="col filtro">
+
+            <select class="form-select" name="categoria" aria-label="Default select example">
+              <option value="" {% if not request.GET.categoria %} selected {% endif %}>categoria</option>
+              <option value="sprint semanal" {% if request.GET.categoria %}selected{% endif %}>sprint semanal</option>
+              <option value="sprint quinzenal" {% if request.GET.categoria %}selected{% endif %}>sprint quinzenal
+              </option>
+              <option value="sprint mensal" {% if request.GET.categoria %}selected{% endif %}>sprint mensal
+              </option>
+              <option value="sprint anual" {% if request.GET.categoria %}selected{% endif %}>sprint anual
+              </option>
+            </select>
+          </div>
+
           <div class="input-group-btn">
             <button class="btn btn-default " id="search-btn" type="submit">
               <i class="fa fa-search"></i>
             </button>
           </div>
         </div>
+
       </form>
     </div>
     <div class="col col-novatarefa">

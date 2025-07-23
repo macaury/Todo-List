@@ -8,14 +8,14 @@ class Tarefas(models.Model):
     sprint_mensal = 'sprint mensal'
     sprint_anual = 'sprint anual'
 
-    status_1 = 'Aberto'
-    status_2 = 'Stand-by'
-    status_3 = 'Andamento'
-    status_4 = 'Finalizado'
+    status_1 = 'aberto'
+    status_2 = 'standby'
+    status_3 = 'andamento'
+    status_4 = 'finalizado'
 
     categoria_list = [(sprint_semanal ,'sprint semanal'),(sprint_quinzenal ,'sprint quinzenal'),(sprint_mensal ,'sprint mensal'),(sprint_anual ,'sprint anual')]
 
-    status_list = [(status_1,'Aberto'),(status_3,'Andamento'),(status_2,'Stand-by'),(status_4,'Finalizado')]
+    status_list = [(status_1,'aberto'),(status_3,'andamento'),(status_2,'standby'),(status_4,'finalizado')]
 
     usuario = models.ForeignKey(get_user_model(),on_delete=models.CASCADE)
     titulo = models.CharField(max_length=40)

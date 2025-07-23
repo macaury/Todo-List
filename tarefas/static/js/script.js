@@ -24,8 +24,4 @@ document.getElementById("search-btn").addEventListener("click",function(){
 });
 
 
-document.getElementById('.filter-btn').addEventListener(checkbox => {
-    checkbox.addEventListener('change', () => {
-        checkbox.closest('form').submit();
-    });
-});
+
