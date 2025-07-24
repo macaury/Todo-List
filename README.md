@@ -1,1 +1,1 @@
-Todo list em python utilizado Django 
+Todo list em python utilizando Django 
