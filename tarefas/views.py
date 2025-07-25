@@ -23,13 +23,11 @@ def sua_view(request):
 # função da pagina OverView
 @login_required
 def overlist(request):
-    tarefas = Tarefas.objects.filter(usuario=request.user)
+    tarefas = Tarefas.objects.all()
 
     search = request.GET.get('search')
     status = request.GET.get('status')
     categoria = request.GET.get('categoria')
-
-
 
     if search:
         tarefas = tarefas.filter(titulo__icontains=search)
@@ -49,7 +47,8 @@ def overlist(request):
         'tarefas': tarefas,
         'search' : search,
         'status' : status,
-        'categoria' : categoria
+        'categoria' : categoria,
+        'total_tf': tarefas.count()
 
         
     }
@@ -100,6 +99,7 @@ def novaTarefa(request):
         if form.is_valid:
             tf = form.save(commit=False)
             tf.usuario = request.user
+
             tf.save()
             return redirect('/')
     else:

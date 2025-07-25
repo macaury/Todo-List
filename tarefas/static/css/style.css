@@ -1,8 +1,10 @@
 body {
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0  !important;
     font-family: monospace !important;
     background-color: #d7d7d7;
+
+
 }
 
 a {
@@ -97,7 +99,7 @@ main {
 }
 
 .descri{
-    padding: 10px 0 !important;
+    padding: 5px 0 !important;
 }
 
 .over-container .descri{
@@ -183,7 +185,7 @@ main {
 }
 
 .list-div {
-    margin: auto !important;
+    margin: 30px auto !important;
     background-color: #484848;
     
     border-radius: 30px;
@@ -208,6 +210,7 @@ main {
     color: white !important;
     font-weight: 800;
     font-size: 2em;
+    
     width: fit-content !important;
     border-bottom: 0.8px dashed white;
 }
@@ -282,14 +285,18 @@ main {
 
 }
 
-.input-group-btn {
-
+#search-btn{
+    width: 120px !important;
+    
     background-color: #484848;
     border: 1px solid #d7d7d7;
-    border-radius: 0 15px 15px 0 !important;
+    border-radius:  15px !important;
+
+    color: #d7d7d7 !important;
+    font-weight: 700 !important;
 }
 
-.input-group-btn:hover {
+#search-btn:hover {
     background-color: #5FB8FF;
     border: 1px solid #5FB8FF;
 
@@ -371,6 +378,7 @@ main {
 
 .list-tarefa p {
     display: -webkit-box;
+    line-clamp:2;
     -webkit-line-clamp: 3 !important;
     /* máximo de linhas */
     -webkit-box-orient: vertical;
@@ -556,8 +564,6 @@ main {
 .change-pass-p a{
      color: #750808;
 }
-
-
 .container-login{
     margin-top: 40px !important;
 }
@@ -568,4 +574,36 @@ main {
 
 .logo img{
     margin: 100px !important;
+}
+
+.pesquisa-div{
+    margin: auto !important;
+    width: 780px !important;
+}
+
+.filtro{
+    
+    width: fit-content !important;
+    margin: 20px auto !important;
+   
+}
+
+.filtro .form-select{
+    background-color: #d6d6d685 !important;
+    border-radius: 20px !important;
+    border: none !important;
+
+    text-align: center !important;
+    text-transform: capitalize !important;
+    
+    font-weight:600 !important;
+    
+}
+
+.filtro .form-select:hover{
+    background-color: #FFC107 !important;
+
+}
+.filtro .col{
+    margin: 0px 5px !important;
 }

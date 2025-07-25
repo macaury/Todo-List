@@ -14,7 +14,6 @@ class Tarefas(models.Model):
     status_4 = 'finalizado'
 
     categoria_list = [(sprint_semanal ,'sprint semanal'),(sprint_quinzenal ,'sprint quinzenal'),(sprint_mensal ,'sprint mensal'),(sprint_anual ,'sprint anual')]
-
     status_list = [(status_1,'aberto'),(status_3,'andamento'),(status_2,'standby'),(status_4,'finalizado')]
 
     usuario = models.ForeignKey(get_user_model(),on_delete=models.CASCADE)
@@ -23,7 +22,8 @@ class Tarefas(models.Model):
     categoria= models.CharField(max_length=20,choices=categoria_list,default=sprint_semanal)
     status= models.CharField(max_length=18,choices=status_list,default=status_1)
     #data_finalizacao = models.CharField(d)
-   
+    
+    
 
 
     #campo de status da tarefa
