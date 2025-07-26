@@ -55,27 +55,7 @@ def overlist(request):
     
     
     return render(request, 'tarefas/overview.html', context)
-#def overlist(request):
-# 
-#    tarefas = Tarefas.objects.all()
-#    df = pd.DataFrame(list(tarefas.values()))
-#    
-#    tarefas_list = tarefas.order_by('-created_at')
-#
-#    search = request.GET.get('search')
-#
-#    total = len(tarefas)
-#
-#    context = {
-#        'tarefas':tarefas,
-#       'total': total
-#    }
-#  
-#    if search:
-#        tarefas = Tarefas.objects.filter(titulo__icontains=search, usuario=request.user)
-#        return render(request,'tarefas/overview.html',context)
-#    else:
-#        return render(request,'tarefas/overview.html',context) # {'tarefas':tarefas_list}
+
 # renderia as listagem de tarefas filtrada pelo usuario logado
 @login_required
 def listaTarefas(request):
@@ -86,7 +66,6 @@ def listaTarefas(request):
         return render(request,'tarefas/list.html',{'tarefas':tarefas})
     else:
         return render(request,'tarefas/list.html',{'tarefas':tarefas_list})
-
 
 
 # função Nova Tarefa - para criar uma nova tarefa
