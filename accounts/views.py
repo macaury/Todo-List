@@ -9,7 +9,7 @@ class SignUp(generic.CreateView):
     form_class = CustomSignUp
     success_url = reverse_lazy('login')
     #template_name = 'registration/register.html'
-    template_name = 'registration/novo_register.html'
+    template_name = 'registration/register.html'
     
 
 

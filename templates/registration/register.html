@@ -1,28 +1,39 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} <!-- Se você tem um template base -->
 {% load crispy_forms_tags %}
 
-{% block title %} Cadastrar Conta {% endblock %}
-
 {% block content %}
-<div class="row">
-    <div class="col-md-4 offset-md-4">
-        <div class="card auth-card">
-            <div class="card-body">
-                <h4 class="card-title text-center">Cadastro To Do List</h4>
-                <form method="post">
-                    {% csrf_token %}
-                    <input type="hidden" name="next" value="{{ next }}"/>
+<div class="container">
+    <div class="row gx-lg- justify-content-between">
 
-                    {{ form|crispy }}
+        <div class="col-6 mb-5 mb-lg-0">
+            <h1 class="my-5 display-3 fw-bold ls-tight ">
+       
+                <p class="change-form-p"> Você já possui </br><a href="/accounts/login/">nossa conta ?</a></p>
+            </h1>
+            <p style="color: hsl(217, 10%, 50.8%)">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Eveniet, itaque accusantium odio, soluta, corrupti aliquam
+                quibusdam tempora at cupiditate quis eum maiores libero
+                veritatis? Dicta facilis sint aliquid ipsum atque?
+            </p>
+        </div>
+        <div class="col-6 ">
+            <div class="card auth-card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Cadastro To Do List</h4>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ next }}" />
+
+                        {{ form|crispy }}
+
+                        <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                    </form>
                     
-                    <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
-                </form>
-                <p class="change-form-p"> Você possui <a href="/accounts/login/">uma conta ?</a></p>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-
 
 {% endblock %}
