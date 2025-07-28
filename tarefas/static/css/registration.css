@@ -1,0 +1,59 @@
+/*
+Arquivo css das paginas do app ACCOUNTS
+*/
+
+
+.change-form-p{
+      margin-top: 20px !important;
+  }
+  
+  
+  .btn-login{
+      background-color: #484848 !important;
+      border: none;
+      margin: 20px 0 20px 0 !important;
+      padding:  20px !important;
+      width: 190px !important;
+      border-radius: 15px;
+      
+      font-weight: 700;
+      font-size: 1.2rem !important;
+  }
+  
+  .btn-login:hover{
+      background-color: #9f9f9f !important ;
+      color: #484848 !important ;
+  }
+  
+  .login-box-input{
+      margin-top: 20px;
+  }
+  
+  
+  /*Box Nome do usuario*/
+  .user-div {
+      margin-right: 20px;
+      padding: 7px 15px;
+      color: white !important;
+      font-size: 0.9em;
+  
+      word-spacing: 2px;
+      font-weight: bold;
+      border-radius: 7px;
+  }
+  
+  .dropdown-toggle:hover {
+      color: #5FB8FF !important;
+  
+  }
+  
+  .dropdown-menu {
+      padding: 0 !important;
+  }
+  
+  .btn-logout {
+      width: 100%;
+      text-align: start !important;
+  
+  }
+  

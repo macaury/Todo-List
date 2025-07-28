@@ -5,113 +5,115 @@
 
 {% block content %}
 
-<div class="container-xxl list-div">
-  <div class="row visao-geral">
-    <div class="title">
-      <h3>Visão Geral</h3>
-    </div>
-    <div class="row-barra ">
-      <div class=" search-box justify-content-end">
-        <form method="get" id="search-form">
-          <div class="row pesquisa-div">
+<div class="container-fluid ">
+  <div class="list-div">
+    <div class="row visao-geral">
+      <div class="title">
+        <h3>Visão Geral</h3>
+      </div>
+      <div class="row-barra ">
+        <div class=" search-box justify-content-end">
+          <form method="get" id="search-form">
+            <div class="row pesquisa-div">
 
-            <input id="search-pesquisa" type="text" class="form-control" placeholder="Pesquisar" name="search"
-              value="{{request.GET.search}}">
+              <input id="search-pesquisa" type="text" class="form-control" placeholder="Pesquisar" name="search"
+                value="{{request.GET.search}}">
+
+            </div>
+            <div class=" input-group filtro">
+
+              <div class="col ">
+
+
+                <select class="form-select" name="status" aria-label="Default select example">
+                  <option value="" {% if not request.GET.status %} selected {% endif %}>
+                    status</option>
+                  <option value="aberto" {% if request.GET.status %}selected{% endif %}>aberto</option>
+                  <option value="andamento" {% if request.GET.status %}selected{% endif %}>andamento
+                  </option>
+                  <option value="standby" {% if request.GET.status %}selected{% endif %}>standby
+                  </option>
+                  <option value="finalizado" {% if request.GET.status %}selected{% endif %}>finalizado
+                  </option>
+                </select>
+              </div>
+
+              <div class="col ">
+                <select class="form-select" name="categoria" aria-label="Default select example">
+                  <option value="" {% if not request.GET.categoria %} selected {% endif %}>categoria</option>
+                  <option value="sprint semanal" {% if request.GET.categoria %}selected{% endif %}>sprint semanal
+                  </option>
+                  <option value="sprint quinzenal" {% if request.GET.categoria %}selected{% endif %}>sprint quinzenal
+                  </option>
+                  <option value="sprint mensal" {% if request.GET.categoria %}selected{% endif %}>sprint mensal
+                  </option>
+                  <option value="sprint anual" {% if request.GET.categoria %}selected{% endif %}>sprint anual
+                  </option>
+                </select>
+
+              </div>
+
+              <div class="input-group-btn col">
+                <button class="btn btn-warning " id="clear-btn" type="none">
+                  <i class="fa fa-x"></i>
+                </button>
+                <button class="btn btn-default " id="search-btn" type="submit">
+                  <i class="fa fa-search"></i> Filtrar
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="container  over-container">
+        <div class="row descri">
+          <span> [ {{total_tf}} ] Tarefas disponiveis </span>
+        </div>
+        <div class="row row-over justify-content-start">
+          <div class="col-3 mt-4">
+         
+
+              <div class="card-add-tarefa card  text-center ">
+                <div class="">
+                  <span>
+                    Nova tarefa
+                  </span>
+                  <div class="icon">
+                    <span>
+                      <a href="novaTarefa/" class=" SomaKi"> icon </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
 
           </div>
-          <div class=" input-group filtro">
 
-            <div class="col ">
+          {% for Tarefa in tarefas %}
 
-
-              <select class="form-select" name="status" aria-label="Default select example">
-                <option value="" {% if not request.GET.status %} selected {% endif %}>
-                  status</option>
-                <option value="aberto" {% if request.GET.status %}selected{% endif %}>aberto</option>
-                <option value="andamento" {% if request.GET.status %}selected{% endif %}>andamento
-                </option>
-                <option value="standby" {% if request.GET.status %}selected{% endif %}>standby
-                </option>
-                <option value="finalizado" {% if request.GET.status %}selected{% endif %}>finalizado
-                </option>
-              </select>
-            </div>
-
-            <div class="col ">
-              <select class="form-select" name="categoria" aria-label="Default select example">
-                <option value="" {% if not request.GET.categoria %} selected {% endif %}>categoria</option>
-                <option value="sprint semanal" {% if request.GET.categoria %}selected{% endif %}>sprint semanal</option>
-                <option value="sprint quinzenal" {% if request.GET.categoria %}selected{% endif %}>sprint quinzenal
-                </option>
-                <option value="sprint mensal" {% if request.GET.categoria %}selected{% endif %}>sprint mensal
-                </option>
-                <option value="sprint anual" {% if request.GET.categoria %}selected{% endif %}>sprint anual
-                </option>
-              </select>
-
-            </div>
-
-            <div class="input-group-btn col">
-              <button class="btn btn-warning " id="clear-btn" type="none">
-                <i class="fa fa-x"></i>
-              </button>
-              <button class="btn btn-default " id="search-btn" type="submit">
-                <i class="fa fa-search"></i> Filtrar
-              </button>
-
-
-            </div>
-          </div>
-
-        </form>
-      </div>
-    </div>
-
-    <div class="container  over-container">
-      <div class="row descri">
-        <span> [ {{total_tf}} ] Tarefas disponiveis </span>
-      </div>
-      <div class="row row-over justify-content-start">
-        <div class="col-3 mt-4">
-          <div class="card-add-tarefa card  text-center ">
-            <div class="">
-              <span>
-                Nova tarefa
-              </span>
-              <div class="icon">
+          <div class="col mt-2 mb-2">
+            <div class="card card-over text-center align-items-between  " href="/tarefa/{{Tarefa.id}} ">
+              <div class=" Top mb-4 ">
+                <div class="row titulo-item">
+                  <span><a href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}}</a></span>
+                </div>
+                <div class="row  mt-2 mb-2 align-items-center">
+                  <span class=" col-6 status">{{Tarefa.status}}</span>
+                  <span class=" col-6 categoria">{{Tarefa.categoria}}</span>
+                </div>
+              </div>
+              <div class=" row descricao ">
                 <span>
-                  <a href="novaTarefa/" class=" SomaKi"> icon </a>
+                  <p text-overflow:ellipsis;>{{Tarefa.descricao}}</a>
                 </span>
+                <div class="mt-auto p-2 btn btn-primary btn-ler">
+                  <a href="/tarefa/{{Tarefa.id}}">continuar lendo...</a>
+                </div>
               </div>
             </div>
           </div>
-
+          {% endfor %}
         </div>
-
-        {% for Tarefa in tarefas %}
-
-        <div class="col-3">
-          <div class="card card-over text-center align-items-between  " href="/tarefa/{{Tarefa.id}} ">
-            <div class=" Top mb-4 ">
-              <div class="row titulo-item">
-                <span><a href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}}</a></span>
-              </div>
-              <div class="row  mt-2 mb-2 align-items-center">
-                <span class=" col-6 status">{{Tarefa.status}}</span>
-                <span class=" col-6 categoria">{{Tarefa.categoria}}</span>
-              </div>
-            </div>
-            <div class=" row descricao ">
-              <span>
-                <p text-overflow:ellipsis;>{{Tarefa.descricao}}</a>
-              </span>
-              <div class="mt-auto p-2 btn btn-primary btn-ler">
-                <a href="/tarefa/{{Tarefa.id}}">continuar lendo...</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
       </div>
     </div>
   </div>
