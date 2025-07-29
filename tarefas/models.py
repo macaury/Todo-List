@@ -21,12 +21,6 @@ class Tarefas(models.Model):
     descricao = models.TextField(blank=False,max_length=254)
     categoria= models.CharField(max_length=20,choices=categoria_list,default=sprint_semanal)
     status= models.CharField(max_length=18,choices=status_list,default=status_1)
-    #data_finalizacao = models.CharField(d)
-    
-    
-
-
-    #campo de status da tarefa
 
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)

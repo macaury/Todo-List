@@ -1,15 +1,7 @@
 from django.shortcuts import redirect, render,get_object_or_404
 from .models import Tarefas
-
 from django.contrib.auth.decorators import login_required
-
 from .forms import TarefaForm
-
-import pandas as pd 
-from plotly.offline import plot
-import plotly.express as px
-
-
 from django.conf import settings
 
 def sua_view(request):
@@ -56,10 +48,12 @@ def overlist(request):
     
     return render(request, 'tarefas/overview.html', context)
 
+
+
 # renderia as listagem de tarefas filtrada pelo usuario logado
 @login_required
 def listaTarefas(request):
-    tarefas_list = Tarefas.objects.all().order_by('-created_at').filter(usuario=request.user)
+    tarefas_list = Tarefas.objects.all().order_by('-created_at').filter(usuario=request.use,profile=None)
     search = request.GET.get('search')
     if search:
         tarefas = Tarefas.objects.filter(titulo__icontains=search, usuario=request.user)

@@ -48,15 +48,11 @@
                     <li>
                         <form action="{% url 'logout' %}" method="post">
                             {% csrf_token %}
+                            
                             <button class="btn btn-logout" type="submit">Logout</a>
                         </form>
                     </li>
-                    <li>
-                        <form action="{% url 'reset' %}" method="post">
-                            {% csrf_token %}
-                            <button class="btn btn-logout" type="submit">Reset</a>
-                        </form>
-                    </li>
+               
                     <li>
                         <hr class="dropdown-divider">
                     </li>

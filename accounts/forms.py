@@ -2,11 +2,10 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+from .models import Profile
+
 class CustomSignUp(UserCreationForm):
-      email = forms.EmailField(required=True,label='E-mail')
-      first_name= forms.CharField(required=True,label='Nome')
-      last_name = forms.CharField(required=True,label='Sobrenome')
-      
+  
       class meta:
             models = User
             fields = (
@@ -17,14 +16,18 @@ class CustomSignUp(UserCreationForm):
                   'password1',
                   'password2'
             )
+
+
+      def save(self, commit=True):
+        user = super().save(commit=False)
+        user.email = self.cleaned_data['email']
+        
+        if commit:
+            Profile.objects.update_or_create(
+                  user=user,
+                  defaults={'nome':self.clean.get('nome','')}
+            )
             
-      
-      def clean_email(self):
-            email = self.cleaned_data.get('email')
-            if User.objects.filter(email=email).exists():
-                  raise forms.ValidationError("Este e-mail já está em uso.")
-            return email
-
-
+        return user
 
             
