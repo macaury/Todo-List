@@ -30,7 +30,7 @@
                                 {% csrf_token %}
                                 <input type="hidden" name="next" class="btn btn-primary" value="{{ next }}"></input>
                                 {{ form|crispy }}
-                                 <p class="change-pass-p"> Esqueceu <a href="/accounts/password_change/">sua senha ?</a></p>
+                                 <p class="change-pass-p"> Esqueceu <a href="/accounts/password_reset">sua senha ?</a></p>
                                  <div class="row justify-content-center">
                                      <button type="submit" class="btn btn-primary btn-login  ">Entrar</button>
                                  </div>

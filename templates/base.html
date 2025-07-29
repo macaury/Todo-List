@@ -15,10 +15,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
 </head>
+
 <body>
     {% if user.is_authenticated %}
     <nav class="navbar navbar-expand fixed-top  ">
-        <div class=" container-fluid navbar-estilo " >
+        <div class=" container-fluid navbar-estilo ">
             <div id="brand">
                 <a class="navbar-brand" href="/">ColaboreLi.st</a>
             </div>
@@ -50,11 +51,16 @@
                             <button class="btn btn-logout" type="submit">Logout</a>
                         </form>
                     </li>
-                    <li><a class="dropdown-item" href="#">Configuração</a></li>
+                    <li>
+                        <form action="{% url 'reset' %}" method="post">
+                            {% csrf_token %}
+                            <button class="btn btn-logout" type="submit">Reset</a>
+                        </form>
+                    </li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="#">Convidar</a></li>
+                    <li><a class="dropdown-item" href="">Trocar senha</a></li>
                 </ul>
             </div>
             {% endif %}
