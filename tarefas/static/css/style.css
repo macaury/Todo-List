@@ -1,4 +1,4 @@
-@import url(list.css);
+
 @import url(overview.css);
 @import url(registration.css);
 
@@ -20,7 +20,7 @@ main {
     padding: 20px 0 !important;
 }
 
-
+/* ESTILO DA NAVBAR*/
 .navbar-estilo {
     width: fit-content !important;
    

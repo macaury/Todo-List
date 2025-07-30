@@ -1,8 +1,12 @@
 from django.shortcuts import redirect, render,get_object_or_404
-from .models import Tarefas
 from django.contrib.auth.decorators import login_required
-from .forms import TarefaForm
+
 from django.conf import settings
+
+from .forms import TarefaForm
+from .models import Tarefas
+
+
 
 def sua_view(request):
     context = {
@@ -40,20 +44,16 @@ def overlist(request):
         'search' : search,
         'status' : status,
         'categoria' : categoria,
-        'total_tf': tarefas.count()
-
-        
+        'total_tf': tarefas.count()    
     }
     
-    
     return render(request, 'tarefas/overview.html', context)
-
-
 
 # renderia as listagem de tarefas filtrada pelo usuario logado
 @login_required
 def listaTarefas(request):
-    tarefas_list = Tarefas.objects.all().order_by('-created_at').filter(usuario=request.use,profile=None)
+    
+    tarefas_list = Tarefas.objects.all().filter(usuario=request.user)
     search = request.GET.get('search')
     if search:
         tarefas = Tarefas.objects.filter(titulo__icontains=search, usuario=request.user)

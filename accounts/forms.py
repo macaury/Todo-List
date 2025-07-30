@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from .models import Profile
 
 class CustomSignUp(UserCreationForm):
-  
+      
       class meta:
             models = User
             fields = (

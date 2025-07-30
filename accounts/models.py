@@ -5,7 +5,7 @@ from django.dispatch import receiver
 
 class Profile(models.Model):
     # Relação 1-para-1 com o modelo User
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
         
     email = models.EmailField(max_length=30)
     first_name= models.CharField(max_length=30)
@@ -17,7 +17,7 @@ class Profile(models.Model):
             email = self.cleaned_data.get('email')
             print(email)
             if User.objects.filter(email=email).exists():
-                  raise models.ValidationError("Este e-mail já está em uso.")
+                raise models.ValidationError("Este e-mail já está em uso.")
             return email
     
     def __str__(self):
