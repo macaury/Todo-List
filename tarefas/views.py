@@ -33,12 +33,8 @@ def overlist(request):
 
     if categoria:
         tarefas = tarefas.filter(categoria__icontains=categoria)
-
-
     
     tarefas = tarefas.order_by('-created_at')
-    
-        
     context = {
         'tarefas': tarefas,
         'search' : search,
@@ -67,11 +63,17 @@ def listaTarefas(request):
 def novaTarefa(request):
     if request.method == 'POST':
         form = TarefaForm(request.POST)
+        
+        
+        
+
 
     
         if form.is_valid:
             tf = form.save(commit=False)
             tf.usuario = request.user
+            
+            
 
             tf.save()
             return redirect('/')

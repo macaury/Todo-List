@@ -7,6 +7,9 @@ class TarefaForm(forms.ModelForm):
         model = Tarefas
 
         fields = ('titulo','categoria','status','descricao')
+        
     
+    
+     
     
  

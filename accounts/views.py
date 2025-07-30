@@ -4,8 +4,6 @@ from django.views import generic
 from .forms import CustomSignUp
 
   
-
-from django.urls import reverse_lazy
 from django.contrib.auth.views import PasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
 

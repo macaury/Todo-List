@@ -5,6 +5,14 @@ from django.contrib.auth.models import User
 from .models import Profile
 
 class CustomSignUp(UserCreationForm):
+      email = forms.EmailField(max_length=30)
+      first_name= forms.CharField(max_length=30)
+      last_name = forms.CharField(max_length=30)
+      
+      team_code = forms.CharField(max_length=30)
+      
+      data_nascimento = forms.DateField()
+      
       
       class meta:
             models = User
@@ -14,7 +22,9 @@ class CustomSignUp(UserCreationForm):
                   'last-name',
                   'email',
                   'password1',
-                  'password2'
+                  'password2',
+                  'data_nascimento',
+                  'team_code'
             )
 
 
