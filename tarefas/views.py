@@ -64,17 +64,9 @@ def novaTarefa(request):
     if request.method == 'POST':
         form = TarefaForm(request.POST)
         
-        
-        
-
-
-    
         if form.is_valid:
             tf = form.save(commit=False)
             tf.usuario = request.user
-            
-            
-
             tf.save()
             return redirect('/')
     else:

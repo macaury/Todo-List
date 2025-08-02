@@ -1,2 +1,4 @@
 LISTA_DE_TAREFAS.md
+__pycache__/
+*.pyc
 

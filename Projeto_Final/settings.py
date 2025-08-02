@@ -43,17 +43,23 @@ LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/accounts/login/'
 
-RESET_REDIRECT_URL = '/accounts/reset-pass/'
+RESET_REDIRECT_URL = '/accounts/password_reset/'
 
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 #Variaveis para envio de email
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_USE_TLS=True
-EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+EMAIL_USE_TLS= True
+EMAIL_HOST_USER = os.getenv('SENDERMAIL')
+EMAIL_HOST_PASSWORD = os.getenv('SENDERPASSWORD')
+EMAIL_TIMEOUT = 60
+DEFAULT_FROM_EMAIL = 'carvalhomacaury@gmail.com'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -119,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -136,14 +142,5 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static'),
-]
-
-LOGO_PRETA = 'assets/Logo-Colaborelist-fundo-black.png'
-
-
-
-LOGO_VERMELHO = 'assets/Logo_Colaborelist_vermelho.png'
 
 

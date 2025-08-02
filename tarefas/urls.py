@@ -15,6 +15,4 @@ urlpatterns = [
     path('overview/delete/<int:id>/', views.deleteTarefa, name='DeleteTarefa'), # overview
     
     
-
-    
 ]

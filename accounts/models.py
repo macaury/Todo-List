@@ -11,7 +11,7 @@ class Profile(models.Model):
     first_name= models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     
-    team_code = models.CharField(max_length=30) # Numero para agrupar os usuários por organização
+    #team_code = models.CharField(max_length=30) # Numero para agrupar os usuários por organização
       
     data_nascimento = models.DateField( null=True,blank=True)
     
