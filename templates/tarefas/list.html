@@ -38,30 +38,32 @@
     <span class="col-1 items_list "> Editar</span>
     <span class="col-1 items_list "> Excluir</span>
   </div>
-  <div class=" row-tarefas ">
-    {% for Tarefa in tarefas %}
-    <div class="item row  align-self-center ">
-      <div class="col-8 ">
-        <span class="titulo-home  "><a href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}} </a>
+    <div class=" row-tarefas ">
+      {% for Tarefa in tarefas %}
+      <div class="item row  align-self-center " >
+
+        <div class="col-8 ">
+          <span class="titulo-home  "><a href="/tarefa/{{Tarefa.id}}">{{Tarefa.titulo}} </a>
+        </div>
+        <div class="col-2">
+          <span
+            class="data-criacao">{{Tarefa.created_at.day}}/{{Tarefa.created_at.month}}/{{Tarefa.created_at.year}}</span>
+        </div>
+        <div class="col-2 ">
+          <a class=" col-6 btn btn-primary edit-btn" href="editar/{{Tarefa.id}}">
+            <span>
+              <i class="fa fa-edit"></i>
+            </span>
+          </a>
+          <a class=" col-6 btn btn-primary delete-btn" href="delete/{{Tarefa.id}}">
+            <span>
+              <i class="fa fa-trash"></i>
+            </span>
+          </a>
+        </div>
       </div>
-      <div class="col-2">
-        <span
-          class="data-criacao">{{Tarefa.created_at.day}}/{{Tarefa.created_at.month}}/{{Tarefa.created_at.year}}</span>
-      </div>
-      <div class="col-2 ">
-        <a class=" col-6 btn btn-primary edit-btn" href="editar/{{Tarefa.id}}">
-          <span>
-            <i class="fa fa-edit"></i>
-          </span>
-        </a>
-        <a class=" col-6 btn btn-primary delete-btn" href="delete/{{Tarefa.id}}">
-          <span>
-            <i class="fa fa-trash"></i>
-          </span>
-        </a>
-      </div>
+      
+      {% endfor %}
     </div>
-    {% endfor %}
-  </div>
 </div>
 {% endblock %}

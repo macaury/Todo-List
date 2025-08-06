@@ -43,10 +43,14 @@ LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/accounts/login/'
 
+
+
+#USERSETTINGS_REDIRECT_URL = '/accounts/user_account'
+
 RESET_REDIRECT_URL = '/accounts/password_reset/'
 
 
-from dotenv import load_dotenv
+from dotenv import load_dotenv # type: ignore
 
 load_dotenv()
 
@@ -59,7 +63,7 @@ EMAIL_USE_TLS= True
 EMAIL_HOST_USER = os.getenv('SENDERMAIL')
 EMAIL_HOST_PASSWORD = os.getenv('SENDERPASSWORD')
 EMAIL_TIMEOUT = 60
-DEFAULT_FROM_EMAIL = 'carvalhomacaury@gmail.com'
+DEFAULT_FROM_EMAIL = os.getenv('SENDERMAIL')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

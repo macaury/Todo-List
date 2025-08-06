@@ -21,8 +21,6 @@ class CustomSignUp(UserCreationForm):
                   
             )
 
-      print('ITEM AQUI 1')
-
       
       def save(self, commit=True):
         user = super().save(commit=False)
@@ -34,7 +32,7 @@ class CustomSignUp(UserCreationForm):
              
         if commit:
             user.save()
-            print('ITEM AQUI 2')
+           
             Profile.objects.update_or_create(
                   user=user
             )

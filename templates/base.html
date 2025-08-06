@@ -18,7 +18,7 @@
 
 <body>
     {% if user.is_authenticated %}
-    <nav class="navbar navbar-expand fixed-top  ">
+    <nav class="navbar navbar-expand  ">
         <div class=" container-fluid navbar-estilo ">
             <div id="brand">
                 <a class="navbar-brand" href="/">ColaboreLi.st</a>
@@ -42,21 +42,19 @@
             <div class="nav-item dropdown user-div">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
-                    Olá,{{user.username}}
+                    Olá,{{user.username}} <img src="" width="20" height="20" style="border-radius: 100%;" alt="">
                 </a>
                 <ul class="dropdown-menu">
                     <li>
                         <form action="{% url 'logout' %}" method="post">
                             {% csrf_token %}
-                            
+
                             <button class="btn btn-logout" type="submit">Logout</a>
                         </form>
                     </li>
+
                
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="">Trocar senha</a></li>
+                    <li><a class="dropdown-item" href="/accounts/password_change/">Trocar senha</a></li>
                 </ul>
             </div>
             {% endif %}
@@ -66,7 +64,7 @@
         {% block content %}
         {% endblock %}
     </main>
-    <footer id="footer-bottom" class="py-3  mt-auto ">
+    <footer id="footer-bottom " class="py-3  mt-auto ">
         <div class="text-center">
             <p class="mb-0">&copy; Powered by Macaury Carvalho</p>
         </div>

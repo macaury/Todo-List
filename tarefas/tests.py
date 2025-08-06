@@ -10,9 +10,10 @@ password = os.getenv('SENDERPASSWORD')
 
 
 
+
 try:
     context = ssl.create_default_context()
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context, timeout=60) as server:
+    with smtplib.SMTP_SSL("smtp.gmail.com", 587, context=context, timeout=60) as server:
         server.login(mail, password)
         server.sendmail(
             "carvalhomacaury@gmail.com",
