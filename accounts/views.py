@@ -21,10 +21,4 @@ class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
     
     success_url = reverse_lazy('login')
 
-def change_password(request):
-    return render(request,'registration/change_password')
-
-
-def reset(request):
-    return render(request,'registration/reset_password.html')
         

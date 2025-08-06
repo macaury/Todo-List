@@ -6,16 +6,6 @@ from django.conf import settings
 from .forms import TarefaForm
 from .models import Tarefas
 
-
-
-def sua_view(request):
-    context = {
-        'logo_preta': settings.LOGO_PRETA,
-        'logo_vermelho': settings.LOGO_VERMELHO
-    }
-    return render(request, 'login.html', context)
-
-
 # função da pagina OverView
 @login_required
 def overlist(request):
